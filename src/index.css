@@ -1,0 +1,1621 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* =========================================================
+     TWO BRAND COLORS IDENTITY SYSTEM (نظام الهوية بلونين فقط)
+     ========================================================= */
+  /* اللون الأول: الأخضر الزمردي الملكي (Royal Emerald - Color 1) */
+  --color-emerald-deep: #064E3B;
+  --color-emerald-rich: #047857;
+  --color-emerald-bright: #10B981;
+  --color-emerald-soft: #34D399;
+  --color-emerald-surface: #071A12;
+
+  /* اللون الثاني: الذهب الملكي المعدني (Royal Gold - Color 2) */
+  --color-gold-metallic: #C6A15B;
+  --color-gold-champagne: #E5C78B;
+  --color-gold-light: #F0D9A2;
+  --color-gold-deep: #8C5E13;
+
+  /* الخلفية المحايدة الصريحة (Neutral Canvas) */
+  --color-bg-primary: #050806;
+  --color-bg-surface: #07130D;
+  --color-bg-card: #0B1F16;
+
+  /* تفعيل الثنائية اللونية الصارمة (Strict 2-Color Active Mapping) */
+  --active-accent: #C6A15B;
+  --active-glow: rgba(198, 161, 91, 0.4);
+  --active-border: rgba(198, 161, 91, 0.55);
+  --active-secondary: #047857;
+  --active-secondary-bright: #10B981;
+}
+
+/* =========================================================
+   UNIVERSAL FONT UNIFICATION: CAIRO ONLY (توحيد الخط بخط كيرو فقط)
+   ========================================================= */
+*,
+*::before,
+*::after,
+html,
+body,
+button,
+input,
+select,
+textarea,
+[class*="font-"],
+.font-sans,
+.font-serif,
+.font-cinzel,
+.font-mono {
+  font-family: 'Cairo', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #050806;
+  color: #E2E8F0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  transition: background-color 0.25s ease, color 0.2s ease;
+}
+
+/* ضبط انسيابية الحروف والتباعد لخط كيرو في الاتجاهين */
+html[dir="rtl"] *,
+html[dir="ltr"] * {
+  letter-spacing: normal !important;
+}
+
+/* =========================================================
+   TYPOGRAPHY HIERARCHY — تسلسل أحجام خط كيرو المتناسق
+   ========================================================= */
+
+/* المستوى 1: العناوين الكبرى وشاشات العرض (Hero & Display) */
+h1,
+.hero-title,
+.text-display,
+.text-5xl,
+.text-6xl {
+  font-family: 'Cairo', sans-serif !important;
+  font-size: clamp(2.125rem, 4vw, 3.25rem) !important; /* 34px - 52px */
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.015em !important;
+}
+
+/* المستوى 2: عناوين الأقسام الرئيسية (Section Titles) */
+h2,
+.section-title,
+.text-section-title,
+.text-4xl,
+.text-3xl {
+  font-family: 'Cairo', sans-serif !important;
+  font-size: clamp(1.5rem, 2.5vw, 2.125rem) !important; /* 24px - 34px */
+  font-weight: 800 !important;
+  line-height: 1.3 !important;
+}
+
+/* المستوى 3: عناوين البطاقات والمجموعات (Card Titles) */
+h3,
+.card-title,
+.text-card-title,
+.text-2xl,
+.text-xl {
+  font-family: 'Cairo', sans-serif !important;
+  font-size: clamp(1.15rem, 1.8vw, 1.35rem) !important; /* 18px - 22px */
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+}
+
+/* المستوى 4: العناوين الفرعية والمجموعات الفرعية (Sub-headings) */
+h4,
+.sub-heading,
+.text-lg {
+  font-family: 'Cairo', sans-serif !important;
+  font-size: 1.0625rem !important; /* 17px */
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+}
+
+/* المستوى 5: النصوص والفقرات التوضيحية (Body Text) */
+p,
+.body-text,
+.text-base {
+  font-family: 'Cairo', sans-serif !important;
+  font-size: 0.9375rem !important; /* 15px */
+  line-height: 1.75 !important;
+  font-weight: 400 !important;
+}
+
+/* المستوى 6: عناصر التنقل والأزرار والروابط (Navigation & Buttons) */
+nav a,
+button,
+.btn,
+.nav-link,
+.btn-gold,
+.btn-emerald,
+.btn-ghost-gold,
+.text-sm {
+  font-family: 'Cairo', sans-serif !important;
+  font-size: 0.875rem !important; /* 14px */
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+}
+
+/* المستوى 7: البيانات الوصفية والوسوم المصغرة (Badges & Metadata) */
+small,
+.caption-text,
+.text-caption,
+.badge-gold,
+.badge-emerald,
+.text-xs,
+.text-\[10px\],
+.text-\[11px\],
+.text-\[9px\] {
+  font-family: 'Cairo', sans-serif !important;
+  font-size: 0.75rem !important; /* 12px */
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+}
+
+/* Aurora Animated Background Effect (Filtered strictly to Emerald & Gold) */
+#bg-aurora-glow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  opacity: 0.65;
+  mix-blend-mode: screen;
+}
+
+.aurora-blob-1 {
+  position: absolute;
+  top: -15%;
+  left: -10%;
+  width: 75vw;
+  height: 75vw;
+  max-width: 900px;
+  max-height: 900px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.22) 0%, rgba(4, 120, 87, 0.12) 45%, transparent 70%);
+  filter: blur(65px);
+  animation: aurora-drift-1 22s ease-in-out infinite alternate;
+}
+
+.aurora-blob-2 {
+  position: absolute;
+  top: 40%;
+  right: -15%;
+  width: 65vw;
+  height: 65vw;
+  max-width: 800px;
+  max-height: 800px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(198, 161, 91, 0.18) 0%, rgba(229, 199, 139, 0.08) 50%, transparent 70%);
+  filter: blur(75px);
+  animation: aurora-drift-2 28s ease-in-out infinite alternate;
+}
+
+.aurora-blob-3 {
+  position: absolute;
+  bottom: -20%;
+  left: 20%;
+  width: 80vw;
+  height: 80vw;
+  max-width: 950px;
+  max-height: 950px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(4, 120, 87, 0.18) 0%, rgba(16, 185, 129, 0.08) 50%, transparent 70%);
+  filter: blur(80px);
+  animation: aurora-drift-3 25s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-drift-1 {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  50% { transform: translate(12%, 18%) scale(1.15) rotate(45deg); }
+  100% { transform: translate(25%, 8%) scale(0.95) rotate(90deg); }
+}
+
+@keyframes aurora-drift-2 {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  50% { transform: translate(-18%, -14%) scale(1.2) rotate(-60deg); }
+  100% { transform: translate(-10%, 15%) scale(0.9) rotate(-120deg); }
+}
+
+@keyframes aurora-drift-3 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-12%, -20%) scale(1.1); }
+  100% { transform: translate(18%, -10%) scale(1.05); }
+}
+
+/* 3D Canvas */
+#bg-3d-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+body {
+  background-color: #050806;
+  color: #E2E8F0;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Custom organic glowing ribbon cursor - Emerald & Gold only */
+#custom-cursor-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99999;
+}
+
+.cursor-head {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #F0D9A2 0%, #C6A15B 50%, #10B981 100%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.8), 0 0 25px rgba(229, 199, 139, 0.6);
+  transition: transform 0.08s ease-out, width 0.2s ease, height 0.2s ease;
+}
+
+.cursor-trail {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.7;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.cursor-expanding {
+  width: 38px !important;
+  height: 38px !important;
+  background: rgba(198, 161, 91, 0.2) !important;
+  border: 1.5px solid #E5C78B !important;
+  box-shadow: 0 0 30px rgba(198, 161, 91, 0.8) !important;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  #custom-cursor-container {
+    display: none !important;
+  }
+}
+
+/* =========================================================
+   TWO-COLOR UNIFIED IDENTITY THEMES (توحيد الألوان بلونين فقط)
+   Color 1: Gold (الذهب الملكي) | Color 2: Emerald (الزمردي الملكي)
+   ========================================================= */
+.theme-gold,
+.theme-yellow,
+.theme-charcoal {
+  --active-accent: #C6A15B;
+  --active-glow: rgba(198, 161, 91, 0.35);
+  --active-border: rgba(198, 161, 91, 0.5);
+  --active-secondary: #047857;
+  --active-secondary-bright: #10B981;
+}
+
+.theme-emerald,
+.theme-forest,
+.theme-bright-emerald {
+  --active-accent: #10B981;
+  --active-glow: rgba(16, 185, 129, 0.4);
+  --active-border: rgba(16, 185, 129, 0.5);
+  --active-secondary: #C6A15B;
+  --active-secondary-bright: #E5C78B;
+}
+
+
+/* Luxury visual surfaces */
+.glass-panel {
+  background: rgba(7, 19, 13, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(229, 199, 139, 0.1);
+}
+
+.glass-panel-elevated {
+  background: rgba(11, 31, 22, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(198, 161, 91, 0.3);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8), 0 0 25px rgba(16, 185, 129, 0.15);
+}
+
+.glass-panel-gold {
+  background: linear-gradient(145deg, rgba(11, 31, 22, 0.8) 0%, rgba(7, 19, 13, 0.92) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(198, 161, 91, 0.35);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(240, 217, 162, 0.2);
+}
+
+.glass-panel-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 30px rgba(16, 185, 129, 0.2);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #F0D9A2 0%, #E5C78B 40%, #C6A15B 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.emerald-gradient-text {
+  background: linear-gradient(135deg, #6EE7B7 0%, #10B981 50%, #047857 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Card 3D tilt and hover glow */
+.interactive-card {
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+  will-change: transform;
+}
+
+.interactive-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(198, 161, 91, 0.5) !important;
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.8), 0 0 25px rgba(16, 185, 129, 0.25);
+}
+
+/* Interactive Heading Glow */
+.heading-hover-glow {
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.heading-hover-glow:hover {
+  color: #F0D9A2;
+  text-shadow: 0 0 20px rgba(229, 199, 139, 0.6), 0 0 40px rgba(16, 185, 129, 0.3);
+}
+
+/* Luxury buttons */
+.btn-gold {
+  background: linear-gradient(135deg, #E5C78B 0%, #C6A15B 60%, #F0D9A2 100%);
+  color: #050806;
+  font-weight: 700;
+  border-radius: 0.65rem;
+  padding: 0.75rem 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 20px rgba(198, 161, 91, 0.3);
+  cursor: pointer;
+  border: none;
+}
+
+.btn-gold:hover {
+  filter: brightness(1.12);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(198, 161, 91, 0.5);
+}
+
+.btn-emerald {
+  background: linear-gradient(135deg, #10B981 0%, #047857 100%);
+  color: #FFFFFF;
+  font-weight: 700;
+  border-radius: 0.65rem;
+  padding: 0.75rem 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+  cursor: pointer;
+  border: none;
+}
+
+.btn-emerald:hover {
+  filter: brightness(1.12);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(16, 185, 129, 0.45);
+}
+
+.btn-ghost-gold {
+  background: rgba(198, 161, 91, 0.08);
+  color: #E5C78B;
+  border: 1px solid rgba(198, 161, 91, 0.35);
+  font-weight: 600;
+  border-radius: 0.65rem;
+  padding: 0.75rem 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.btn-ghost-gold:hover {
+  background: rgba(198, 161, 91, 0.18);
+  border-color: #E5C78B;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Navigation links */
+.nav-link {
+  color: #94A3B8;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 0.35rem 0.6rem;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: #E5C78B;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #10B981, #C6A15B);
+  transition: width 0.25s ease;
+  border-radius: 2px;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+  width: 80%;
+}
+
+/* Badges */
+.badge-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  background: rgba(198, 161, 91, 0.12);
+  border: 1px solid rgba(198, 161, 91, 0.35);
+  color: #F0D9A2;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.badge-emerald {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #6EE7B7;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Atmospheric Background Glows */
+.bg-radial-emerald {
+  background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.22) 0%, rgba(6, 78, 59, 0.1) 45%, transparent 70%);
+}
+
+.bg-radial-beam {
+  background: radial-gradient(ellipse 65% 45% at 75% 20%, rgba(16, 185, 129, 0.28) 0%, rgba(6, 78, 59, 0.12) 50%, transparent 80%);
+}
+
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(16, 185, 129, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
+}
+
+/* Keyframes */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.04);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.785rem;
+  color: #64748B;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumbs a {
+  color: #94A3B8;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumbs a:hover {
+  color: #E5C78B;
+}
+
+/* Article & Content Styling */
+.content-body {
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #CBD5E1;
+}
+
+.content-body h2 {
+  color: #FFFFFF;
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.content-body h3 {
+  color: #E5C78B;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.content-body p {
+  margin-bottom: 1.25rem;
+}
+
+.content-body ul, .content-body ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+html[dir="rtl"] .content-body ul, html[dir="rtl"] .content-body ol {
+  margin-left: 0;
+  margin-right: 1.5rem;
+}
+
+.content-body li {
+  margin-bottom: 0.6rem;
+}
+
+.content-callout {
+  background: rgba(6, 78, 59, 0.25);
+  border-left: 4px solid #C6A15B;
+  border-radius: 0 0.75rem 0.75rem 0;
+  padding: 1.25rem 1.5rem;
+  margin: 1.75rem 0;
+  border: 1px solid rgba(198, 161, 91, 0.25);
+  border-left-width: 4px;
+}
+
+html[dir="rtl"] .content-callout {
+  border-left: 1px solid rgba(198, 161, 91, 0.25);
+  border-right: 4px solid #C6A15B;
+  border-radius: 0.75rem 0 0 0.75rem;
+}
+
+/* Form controls */
+.luxury-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: rgba(5, 8, 6, 0.85);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: 0.65rem;
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.luxury-input:focus {
+  border-color: #C6A15B;
+  box-shadow: 0 0 0 2px rgba(198, 161, 91, 0.25);
+}
+
+.luxury-input::placeholder {
+  color: rgba(148, 163, 184, 0.5);
+}
+
+/* Portfolio Filters */
+.portfolio-filter-btn {
+  padding: 0.5rem 1.2rem;
+  border-radius: 9999px;
+  background: rgba(7, 19, 13, 0.85);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  color: #94A3B8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.portfolio-filter-btn:hover,
+.portfolio-filter-btn.active {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.25) 0%, rgba(198, 161, 91, 0.2) 100%);
+  border-color: #E5C78B;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2);
+}
+
+/* =========================================================
+   MEGA MENU & MOBILE ACCORDION STYLES
+   ========================================================= */
+.mega-menu-wrapper {
+  position: static !important;
+}
+
+.mega-menu-dropdown {
+  position: absolute;
+  top: calc(100% - 2px);
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 2rem);
+  max-width: 1220px;
+  max-height: calc(88vh - 80px);
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s;
+  z-index: 100;
+  background: rgba(5, 8, 6, 0.98);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 35px rgba(16, 185, 129, 0.15);
+  border-radius: 1.25rem;
+}
+
+/* Invisible bridge so mouse hover is never broken when moving from trigger into dropdown */
+.mega-menu-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+  height: 20px;
+}
+
+.mega-menu-wrapper:hover .mega-menu-dropdown,
+.mega-menu-wrapper:focus-within .mega-menu-dropdown,
+.mega-menu-dropdown.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.mega-menu-wrapper:hover .mega-menu-trigger svg,
+.mega-menu-wrapper:focus-within .mega-menu-trigger svg,
+.mega-menu-wrapper:has(.mega-menu-dropdown.is-open) .mega-menu-trigger svg {
+  transform: rotate(180deg);
+}
+
+/* Mega menu item link effects */
+.mega-menu-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  color: #94A3B8;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+
+.mega-menu-link:hover {
+  color: #FFFFFF;
+  background: rgba(16, 185, 129, 0.12);
+  transform: translateX(3px);
+}
+
+html[dir="rtl"] .mega-menu-link:hover {
+  transform: translateX(-3px);
+}
+
+.mega-menu-link:hover span.bullet {
+  background-color: #E5C78B;
+  box-shadow: 0 0 8px rgba(229, 199, 139, 0.8);
+}
+
+/* Mobile Accordions */
+.mobile-accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-accordion-content.is-open {
+  max-height: 1400px;
+}
+
+/* =========================================================
+   FULL WIDTH LAYOUT SYSTEM (100% Viewport Breadth)
+   ========================================================= */
+/* Expand standard restricted containers to full width with elegant fluid padding */
+.max-w-7xl, .max-w-6xl {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Ensure main containers stretch wide while preserving edge breathability */
+main, section, .full-width-section {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Standardized responsive fluid inner spacing for ultra-wide and large screens */
+.max-w-7xl, .max-w-6xl, .site-container {
+  padding-left: clamp(1rem, 3.5vw, 4.5rem) !important;
+  padding-right: clamp(1rem, 3.5vw, 4.5rem) !important;
+}
+
+/* Header container adjustments to keep branding and navigation well-proportioned across full breadth */
+header .max-w-7xl {
+  padding-left: clamp(1rem, 2.5vw, 3rem) !important;
+  padding-right: clamp(1rem, 2.5vw, 3rem) !important;
+}
+
+/* Intelligent grid expansion for cards on large/desktop screens */
+@media (min-width: 1280px) {
+  .grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1600px) {
+  .grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3 {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (min-width: 2000px) {
+  .grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3 {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  }
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE TYPOGRAPHY & TOUCH ERGONOMICS (< 768px)
+   ========================================================= */
+@media (max-width: 768px) {
+  /* Prevent oversized titles from overflowing or breaking awkwardly on mobile */
+  h1, .text-4xl, .text-5xl, .text-6xl {
+    font-size: clamp(1.4rem, 6vw, 2.15rem) !important;
+    line-height: 1.3 !important;
+  }
+
+  h2, .text-3xl {
+    font-size: clamp(1.2rem, 5.2vw, 1.65rem) !important;
+    line-height: 1.35 !important;
+  }
+
+  h3, .text-2xl {
+    font-size: clamp(1.05rem, 4.2vw, 1.35rem) !important;
+    line-height: 1.4 !important;
+  }
+
+  h4, .text-xl {
+    font-size: 1rem !important;
+    line-height: 1.45 !important;
+  }
+
+  /* Body and paragraphs optimal sizing for mobile reading comfort */
+  p, .text-sm {
+    font-size: 0.8125rem !important; /* 13px */
+    line-height: 1.65 !important;
+  }
+
+  .text-xs {
+    font-size: 0.75rem !important; /* 12px */
+    line-height: 1.5 !important;
+  }
+
+  /* Meta tags and micro-labels */
+  .text-\[9px\], .text-\[10px\] {
+    font-size: 0.6875rem !important; /* 11px */
+  }
+
+  /* Prevent text clipping and horizontal scroll on small displays */
+  body, #root, main, section {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    box-sizing: border-box;
+  }
+
+  /* Mobile App Bar Icon Sizing & Touch Alignment */
+  .mobile-nav-icon {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+    stroke-width: 1.85 !important;
+  }
+
+  /* Comfortable edge padding on mobile */
+  .glass-panel, .glass-panel-elevated {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Safe area bottom padding for mobile app views */
+  .safe-area-bottom {
+    padding-bottom: max(0.6rem, env(safe-area-inset-bottom)) !important;
+  }
+}
+
+/* ==============================================================
+ * GLOBAL MOBILE APP NAVIGATION & BOTTOM SHEET SYSTEM
+ * ============================================================== */
+@keyframes slideUpSheet {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInBackdrop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slideUpSheet 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeInBackdrop 0.25s ease-out forwards;
+}
+
+/* Mobile Screen Strict Overrides */
+@media (max-width: 767px) {
+  /* Complete suppression of Back-To-Top button on mobile devices */
+  #back-to-top-btn,
+  .back-to-top,
+  [data-back-to-top],
+  .floating-back-to-top {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  /* Hide language toggle button in mobile top bar across all pages */
+  .mobile-top-bar .lang-toggle,
+  .mobile-lang-btn,
+  header .mobile-lang-switcher,
+  [data-mobile-lang-switch] {
+    display: none !important;
+  }
+
+  /* Safe content padding so fixed bottom bar never obstructs content */
+  body {
+    padding-bottom: calc(75px + env(safe-area-inset-bottom, 10px)) !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  header, footer, nav, #custom-cursor-container, .no-print, button {
+    display: none !important;
+  }
+  .glass-panel, .glass-panel-elevated {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  .gold-gradient-text, .emerald-gradient-text {
+    -webkit-text-fill-color: #000000 !important;
+    color: #000000 !important;
+  }
+}
+
+/* =============================================================
+ * LIGHT MODE (الوضع النهاري) SYSTEM-WIDE THEMING
+ * High-Contrast Luxury Light Theme with Emerald & Gold Accents
+ * ============================================================= */
+
+html.light {
+  background-color: #F8FAFC !important;
+  color: #0F172A !important;
+  color-scheme: light;
+}
+
+html.light body {
+  background-color: #F8FAFC !important;
+  color: #1E293B !important;
+}
+
+/* Core Surface Colors */
+html.light .bg-\[\#050806\],
+html.light [class*="bg-[#050806]"] {
+  background-color: #F8FAFC !important;
+}
+
+html.light .bg-\[\#07130D\],
+html.light [class*="bg-[#07130D]"] {
+  background-color: #FFFFFF !important;
+}
+
+html.light .bg-\[\#0B1F16\],
+html.light [class*="bg-[#0B1F16]"] {
+  background-color: #F1F5F9 !important;
+}
+
+html.light [class*="bg-emerald-950"] {
+  background-color: #ECFDF5 !important;
+}
+
+/* Glass Panels in Light Mode */
+html.light .glass-panel {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.04) !important;
+}
+
+html.light .glass-panel-elevated {
+  background: #FFFFFF !important;
+  border-color: rgba(198, 161, 91, 0.45) !important;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.03) !important;
+}
+
+html.light .glass-panel-gold {
+  background: linear-gradient(145deg, #FFFFFF 0%, #F8FAFC 100%) !important;
+  border-color: rgba(198, 161, 91, 0.5) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06) !important;
+}
+
+html.light .glass-panel-hover:hover {
+  background: #FFFFFF !important;
+  border-color: rgba(16, 185, 129, 0.6) !important;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.08), 0 0 20px rgba(16, 185, 129, 0.15) !important;
+}
+
+html.light .interactive-card:hover {
+  border-color: rgba(198, 161, 91, 0.7) !important;
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.12), 0 0 20px rgba(16, 185, 129, 0.15) !important;
+}
+
+/* Typography & Text Contrast in Light Mode */
+html.light .text-white {
+  color: #0F172A !important;
+}
+
+html.light .text-slate-100 {
+  color: #0F172A !important;
+}
+
+html.light .text-slate-200 {
+  color: #1E293B !important;
+}
+
+html.light .text-slate-300 {
+  color: #334155 !important;
+}
+
+html.light .text-slate-400 {
+  color: #475569 !important;
+}
+
+html.light .text-slate-500 {
+  color: #64748B !important;
+}
+
+html.light .text-emerald-100,
+html.light [class*="text-emerald-100"] {
+  color: #334155 !important;
+}
+
+html.light .text-emerald-200,
+html.light [class*="text-emerald-200"] {
+  color: #1E293B !important;
+}
+
+html.light .text-emerald-300,
+html.light [class*="text-emerald-300"] {
+  color: #065F46 !important;
+}
+
+html.light .text-emerald-400,
+html.light [class*="text-emerald-400"] {
+  color: #047857 !important;
+}
+
+html.light .text-emerald-500,
+html.light [class*="text-emerald-500"] {
+  color: #059669 !important;
+}
+
+/* Luxury Gold & Emerald Gradients in Light Mode (Deepened for AAA Contrast) */
+html.light .gold-gradient-text {
+  background: linear-gradient(135deg, #B8860B 0%, #C6A15B 50%, #996515 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+html.light .emerald-gradient-text {
+  background: linear-gradient(135deg, #047857 0%, #059669 50%, #064E3B 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Borders & Dividers in Light Mode */
+html.light [class*="border-emerald-950"],
+html.light [class*="border-emerald-900"],
+html.light [class*="border-slate-800"],
+html.light [class*="border-slate-700"] {
+  border-color: #E2E8F0 !important;
+}
+
+html.light hr {
+  border-color: #E2E8F0 !important;
+}
+
+/* Headers & Navigation in Light Mode */
+html.light header {
+  background-color: rgba(255, 255, 255, 0.96) !important;
+  border-color: #E2E8F0 !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
+}
+
+html.light .desktop-kicker-bar,
+html.light header > div:first-child {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+}
+
+html.light nav.fixed.bottom-0 {
+  background-color: rgba(255, 255, 255, 0.97) !important;
+  border-color: #E2E8F0 !important;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.06) !important;
+}
+
+html.light #mobile-nav-drawer {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  border-color: #E2E8F0 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+html.light .mega-menu-dropdown {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Bottom Sheets & Dialogs */
+html.light [role="dialog"] .bg-\[\#07130D\],
+html.light [role="dialog"] .bg-\[\#0B1F16\],
+html.light .bottom-sheet-body {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+  color: #0F172A !important;
+}
+
+/* Form Inputs, Textareas & Selects */
+html.light input,
+html.light textarea,
+html.light select,
+html.light .luxury-input {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border-color: #CBD5E1 !important;
+}
+
+html.light input:focus,
+html.light textarea:focus,
+html.light select:focus,
+html.light .luxury-input:focus {
+  border-color: #059669 !important;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15) !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #94A3B8 !important;
+}
+
+/* Badges & Pills */
+html.light .badge-gold {
+  background: rgba(198, 161, 91, 0.15) !important;
+  border-color: rgba(198, 161, 91, 0.45) !important;
+  color: #8C5E13 !important;
+}
+
+html.light .badge-emerald {
+  background: rgba(16, 185, 129, 0.12) !important;
+  border-color: rgba(16, 185, 129, 0.45) !important;
+  color: #065F46 !important;
+}
+
+html.light .btn-ghost-gold {
+  background: rgba(198, 161, 91, 0.1) !important;
+  color: #996515 !important;
+  border-color: rgba(198, 161, 91, 0.5) !important;
+}
+
+html.light .btn-ghost-gold:hover {
+  background: rgba(198, 161, 91, 0.2) !important;
+  color: #784E0E !important;
+  border-color: #B8860B !important;
+}
+
+/* Tables */
+html.light table th {
+  background-color: #F1F5F9 !important;
+  color: #0F172A !important;
+  border-color: #CBD5E1 !important;
+}
+
+html.light table td {
+  border-color: #E2E8F0 !important;
+  color: #334155 !important;
+}
+
+html.light table tr:hover td {
+  background-color: #F8FAFC !important;
+}
+
+/* Background Atmosphere in Light Mode */
+html.light #bg-aurora-glow {
+  opacity: 0.22 !important;
+  mix-blend-mode: multiply !important;
+}
+
+html.light .bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(16, 185, 129, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(16, 185, 129, 0.08) 1px, transparent 1px) !important;
+}
+
+/* Theme Toggle Button Styles */
+.theme-toggle-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+html.dark .theme-toggle-pill {
+  background-color: #07130D;
+  border: 1px solid rgba(198, 161, 91, 0.4);
+  color: #F0D9A2;
+}
+
+html.dark .theme-toggle-pill:hover {
+  border-color: #E5C78B;
+  color: #FFFFFF;
+  box-shadow: 0 0 15px rgba(229, 199, 139, 0.25);
+}
+
+html.light .theme-toggle-pill {
+  background-color: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  color: #0F172A;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+html.light .theme-toggle-pill:hover {
+  border-color: #059669;
+  color: #047857;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.15);
+}
+
+/* =============================================================
+ * SPECIALIZED ARTICLE UX: READING PROGRESS, REVEAL MOTION & FAQs
+ * ============================================================= */
+#article-reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #047857 0%, #10B981 45%, #C6A15B 80%, #E5C78B 100%);
+  transform-origin: left center;
+  transform: scaleX(0);
+  z-index: 9999;
+  pointer-events: none;
+  will-change: transform;
+  transition: transform 0.08s linear;
+}
+
+html[dir="rtl"] #article-reading-progress {
+  transform-origin: right center;
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.article-toc-link {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.article-toc-link.toc-active {
+  color: #E5C78B !important;
+  background-color: rgba(16, 185, 129, 0.14);
+  border-color: #E5C78B !important;
+  font-weight: 700 !important;
+}
+
+/* Interactive FAQ Accordion */
+.faq-accordion-item {
+  transition: border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.faq-accordion-item.is-open {
+  border-color: rgba(198, 161, 91, 0.5) !important;
+  box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.65), 0 0 20px rgba(16, 185, 129, 0.1);
+}
+
+.faq-accordion-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.32s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+  opacity: 0;
+}
+
+.faq-accordion-panel.is-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.faq-accordion-inner {
+  overflow: hidden;
+}
+
+.faq-chevron {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-accordion-item.is-open .faq-chevron {
+  transform: rotate(180deg);
+}
+
+/* Editorial Measure & Tabular Figures */
+.article-prose p,
+.article-prose li {
+  line-height: 1.85 !important;
+  font-size: 0.965rem !important;
+}
+
+.article-prose table {
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-float,
+  .animate-pulse-glow,
+  .animate-shimmer,
+  .aurora-blob-1,
+  .aurora-blob-2,
+  .aurora-blob-3 {
+    animation: none !important;
+  }
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .faq-accordion-panel,
+  .faq-chevron,
+  #article-reading-progress {
+    transition: none !important;
+  }
+}
+
+
+
+
+/* =========================================================
+   BRAND LAYER — هوية موحّدة: حبر أخضر داكن + ذهبي + زمردي
+   One palette, Cairo everywhere, readable sizes, content above
+   the decorative background. Keep this block LAST in the file.
+   ========================================================= */
+:root {
+  --yg-ink: #050806;        /* الخلفية */
+  --yg-surface: #0A1510;    /* الكروت */
+  --yg-gold: #E5C78B;       /* اللون الأساسي */
+  --yg-gold-deep: #C6A15B;
+  --yg-green: #34D399;      /* اللون الثاني (نص) */
+  --yg-green-solid: #10B981;
+  --yg-strong: #F4F7F5;
+  --yg-soft: #D3DDD7;
+  --yg-muted: #A3B3AA;
+}
+html.light {
+  --yg-ink: #F6F7F3;
+  --yg-surface: #FFFFFF;
+  --yg-gold: #8A6418;
+  --yg-gold-deep: #7A5512;
+  --yg-green: #047857;
+  --yg-green-solid: #059669;
+  --yg-strong: #0E1A13;
+  --yg-soft: #26352D;
+  --yg-muted: #4E5F56;
+}
+
+/* ---- 1. Cairo for every language and every element (code blocks keep a monospace) ---- */
+html, body, body *:not(pre):not(code):not(kbd):not(samp):not(svg):not(svg *) {
+  font-family: 'Cairo', system-ui, sans-serif !important;
+}
+pre, code, kbd, samp {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !important;
+}
+
+/* ---- 2. Content always sits above the moving background ---- */
+html { background-color: var(--yg-ink) !important; }
+html body, html.light body { background-color: transparent !important; }
+#bg-aurora-glow { z-index: -2 !important; }
+#bg-3d-canvas { z-index: -1 !important; opacity: .55; }
+html.light #bg-3d-canvas { opacity: .35; }
+
+/* ---- 3. Readable type: nothing under 12px, comfortable body text on phones ---- */
+.text-\[9px\], .text-\[10px\], .text-\[11px\],
+.sm\:text-\[10px\], .sm\:text-\[11px\] {
+  font-size: 0.75rem !important;
+  line-height: 1.5 !important;
+}
+.sm\:text-\[13px\] { font-size: 0.8125rem !important; }
+@media (max-width: 768px) {
+  p, .text-sm { font-size: 0.875rem !important; line-height: 1.75 !important; }
+  .text-\[9px\], .text-\[10px\], .text-\[11px\], .text-xs { font-size: 0.75rem !important; }
+}
+.uppercase { letter-spacing: 0.02em !important; }
+
+/* ---- 4. Base text colours ---- */
+html body { color: var(--yg-soft) !important; }
+html:root h1, html:root h2, html:root h3, html:root h4 { color: var(--yg-strong); }
+html:root .gold-gradient-text {
+  background: linear-gradient(135deg, var(--yg-gold) 0%, var(--yg-gold-deep) 100%) !important;
+  -webkit-background-clip: text !important; background-clip: text !important; color: transparent !important;
+}
+html.light .gold-gradient-text {
+  background: linear-gradient(135deg, #8A6418 0%, #6E4C0E 100%) !important;
+  -webkit-background-clip: text !important; background-clip: text !important;
+}
+
+/* ---- 5. Buttons keep their own readable label in both themes ---- */
+html:root .btn-gold, html:root .btn-gold * { color: #050806 !important; }
+html:root .btn-emerald, html:root .btn-emerald * { color: #FFFFFF !important; }
+html:root .btn-ghost-gold { color: var(--yg-gold) !important; border-color: color-mix(in srgb, var(--yg-gold) 45%, transparent) !important; }
+html.light .btn-ghost-gold { background: rgba(138, 100, 24, .06) !important; }
+html.light .btn-ghost-gold:hover { background: rgba(138, 100, 24, .12) !important; }
+
+/* ---- 6. Light theme: surfaces and lines from the same palette ---- */
+html.light .glass-panel, html.light .glass-panel-elevated, html.light .glass-panel-gold {
+  background: #FFFFFF !important;
+  border-color: rgba(14, 26, 19, .10) !important;
+  box-shadow: 0 1px 2px rgba(14, 26, 19, .04), 0 8px 24px -12px rgba(14, 26, 19, .12) !important;
+}
+html.light [class*="border-emerald-9"], html.light [class*="border-emerald-8"] { border-color: rgba(14, 26, 19, .10) !important; }
+html.light .nav-link.active, html.light .nav-link:hover { color: var(--yg-gold) !important; }
+/* solid green/gold chips keep white or ink text */
+html:root [class~="bg-emerald-500"], html:root [class~="bg-emerald-600"], html:root [class~="bg-emerald-700"] { color: #FFFFFF !important; }
+html:root .portfolio-filter-btn.active { background: var(--yg-gold) !important; color: #050806 !important; border-color: transparent !important; }
+html.light .portfolio-filter-btn.active { background: #8A6418 !important; color: #FFFFFF !important; }
+html.light .nav-link, html.light nav a:not(.btn-gold):not(.btn-emerald) { color: var(--yg-soft) !important; }
+/* dark gradient bands become a calm light band in the light theme */
+html.light section[class*="bg-gradient"][class*="from-[#0"], html.light footer[class*="bg-gradient"][class*="from-[#0"] {
+  background-image: none !important; background-color: #EEF2EC !important;
+}
+
+/* ---- 7. Mobile header: keep the menu button on screen ---- */
+html:root .hidden:is(.btn-gold, .btn-emerald, .btn-ghost-gold) { display: none !important; }
+@media (min-width: 640px) { html:root .hidden.sm\:inline-flex:is(.btn-gold, .btn-emerald, .btn-ghost-gold) { display: inline-flex !important; } html:root .hidden.sm\:flex:is(.btn-gold, .btn-emerald, .btn-ghost-gold) { display: flex !important; } }
+@media (min-width: 768px) { html:root .hidden.md\:inline-flex:is(.btn-gold, .btn-emerald, .btn-ghost-gold) { display: inline-flex !important; } html:root .hidden.md\:flex:is(.btn-gold, .btn-emerald, .btn-ghost-gold) { display: flex !important; } }
+@media (min-width: 1024px) { html:root .hidden.lg\:inline-flex:is(.btn-gold, .btn-emerald, .btn-ghost-gold) { display: inline-flex !important; } html:root .hidden.lg\:flex:is(.btn-gold, .btn-emerald, .btn-ghost-gold) { display: flex !important; } }
+@media (max-width: 639px) {
+  header > div > a:first-child { flex-shrink: 1 !important; min-width: 0 !important; }
+  header > div > a:first-child > div:last-child { min-width: 0; overflow: hidden; }
+  header > div > a:first-child > div:last-child * { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  #site-theme-toggle span { display: none !important; }
+  #site-theme-toggle { padding: 0.5rem !important; }
+}
+/* desktop header: theme button shows its icon only until the screen is wide enough for the label */
+@media (max-width: 1535px) { #site-theme-toggle span { display: none !important; } #site-theme-toggle { padding: 0.5rem !important; } }
+/* desktop header: drop the header CTA and tighten links until there is room (the hero carries the same CTA) */
+@media (max-width: 1679px) { html:root body header a.btn-gold.btn-gold.btn-gold { display: none !important; } }
+@media (min-width: 1024px) and (max-width: 1439px) {
+  header nav { gap: 0.15rem !important; }
+  header nav .nav-link { padding-inline: 0.4rem !important; font-size: 0.8125rem !important; }
+  header > div > a:first-child > div:last-child > div:last-child { display: none; }
+}
+
+/* ---- colour utilities mapped onto the palette (generated) ---- */
+html:root .text-slate-100{color:var(--yg-strong) !important}
+html:root .text-emerald-100,
+html:root .text-emerald-100\/70,
+html:root .text-emerald-100\/75,
+html:root .text-emerald-100\/80,
+html:root .text-emerald-100\/90,
+html:root .text-emerald-100\/95,
+html:root .text-emerald-200,
+html:root .text-emerald-200\/70,
+html:root .text-emerald-200\/75,
+html:root .text-emerald-200\/80,
+html:root .text-emerald-200\/85,
+html:root .text-emerald-200\/90,
+html:root .text-slate-200,
+html:root .text-slate-200\/90,
+html:root .text-slate-200\/95,
+html:root .text-slate-300,
+html:root .text-slate-300\/80,
+html:root .text-slate-300\/85,
+html:root .text-zinc-300{color:var(--yg-soft) !important}
+html:root .text-slate-400,
+html:root .text-slate-500,
+html:root .text-slate-600,
+html:root .text-slate-950,
+html:root .text-zinc-400{color:var(--yg-muted) !important}
+html:root .group:hover .group-hover\:text-\[\#E5C78B\],
+html:root .hover\:text-\[\#E5C78B\]:hover,
+html:root .hover\:text-\[\#F0D9A2\]:hover,
+html:root .text-\[\#00D5A5\],
+html:root .text-\[\#0678BE\],
+html:root .text-\[\#21759B\],
+html:root .text-\[\#229ac8\],
+html:root .text-\[\#845EC2\],
+html:root .text-\[\#96BF48\],
+html:root .text-\[\#C6A15B\],
+html:root .text-\[\#E5C78B\],
+html:root .text-\[\#E5C78B\]\/80,
+html:root .text-\[\#EE672F\],
+html:root .text-\[\#F0D9A2\],
+html:root .text-amber-400,
+html:root .text-red-200,
+html:root .text-red-400,
+html:root .text-rose-200,
+html:root .text-rose-300,
+html:root .text-rose-400{color:var(--yg-gold) !important}
+html:root .text-emerald-300,
+html:root .text-emerald-300\/60,
+html:root .text-emerald-300\/70,
+html:root .text-emerald-300\/75,
+html:root .text-emerald-300\/80,
+html:root .text-emerald-300\/85,
+html:root .text-emerald-300\/90,
+html:root .text-emerald-400,
+html:root .text-emerald-400\/60,
+html:root .text-emerald-400\/70,
+html:root .text-emerald-400\/80,
+html:root .text-emerald-400\/85,
+html:root .text-emerald-500,
+html:root .text-emerald-800{color:var(--yg-green) !important}
+html:root .bg-\[\#00D5A5\]{background-color:var(--yg-gold) !important}
+html:root .bg-\[\#0678BE\]{background-color:var(--yg-gold) !important}
+html:root .bg-\[\#0678BE\]\/20{background-color:rgba(229,199,139,0.12) !important}
+html:root .bg-\[\#10B981\]{background-color:var(--yg-gold) !important}
+html:root .bg-\[\#21759B\]\/20{background-color:rgba(229,199,139,0.12) !important}
+html:root .bg-\[\#229ac8\]{background-color:var(--yg-gold) !important}
+html:root .bg-\[\#229ac8\]\/20{background-color:rgba(229,199,139,0.12) !important}
+html:root .bg-\[\#7E3AF2\]\/20{background-color:rgba(229,199,139,0.12) !important}
+html:root .bg-\[\#845EC2\]{background-color:var(--yg-gold) !important}
+html:root .bg-\[\#845EC2\]\/20{background-color:rgba(229,199,139,0.12) !important}
+html:root .bg-\[\#96BF48\]{background-color:var(--yg-gold) !important}
+html:root .bg-\[\#96BF48\]\/20{background-color:rgba(229,199,139,0.12) !important}
+html:root .bg-\[\#EE672F\]{background-color:var(--yg-gold) !important}
+html:root .bg-\[\#EE672F\]\/20{background-color:rgba(229,199,139,0.12) !important}
+html:root .bg-amber-500\/10{background-color:rgba(229,199,139,0.06) !important}
+html:root .bg-red-950\/60{background-color:rgba(229,199,139,0.16) !important}
+html:root .border-\[\#00D5A5\]\/40{border-color:rgba(229,199,139,0.45) !important}
+html:root .border-\[\#0678BE\]\/40{border-color:rgba(229,199,139,0.45) !important}
+html:root .border-\[\#0678BE\]\/50{border-color:rgba(229,199,139,0.45) !important}
+html:root .border-\[\#21759B\]\/30{border-color:rgba(229,199,139,0.40) !important}
+html:root .border-\[\#21759B\]\/40{border-color:rgba(229,199,139,0.45) !important}
+html:root .border-\[\#21759B\]\/50{border-color:rgba(229,199,139,0.45) !important}
+html:root .border-\[\#229ac8\]\/40{border-color:rgba(229,199,139,0.45) !important}
+html:root .border-\[\#229ac8\]\/50{border-color:rgba(229,199,139,0.45) !important}
+html:root .border-\[\#7E3AF2\]\/50{border-color:rgba(229,199,139,0.45) !important}
+html:root .border-\[\#845EC2\]\/40{border-color:rgba(229,199,139,0.45) !important}
+html:root .border-\[\#845EC2\]\/50{border-color:rgba(229,199,139,0.45) !important}
+html:root .border-\[\#96BF48\]\/30{border-color:rgba(229,199,139,0.40) !important}
+html:root .border-\[\#96BF48\]\/40{border-color:rgba(229,199,139,0.45) !important}
+html:root .border-\[\#96BF48\]\/50{border-color:rgba(229,199,139,0.45) !important}
+html:root .border-\[\#EE672F\]\/40{border-color:rgba(229,199,139,0.45) !important}
+html:root .border-\[\#EE672F\]\/50{border-color:rgba(229,199,139,0.45) !important}
+html:root .border-red-500\/20{border-color:rgba(229,199,139,0.30) !important}
+html:root .border-red-500\/40{border-color:rgba(229,199,139,0.45) !important}
+html:root .border-red-500\/50{border-color:rgba(229,199,139,0.45) !important}
+html:root .border-rose-500\/20{border-color:rgba(229,199,139,0.30) !important}
+html:root .border-rose-500\/25{border-color:rgba(229,199,139,0.35) !important}
+html:root .border-rose-500\/30{border-color:rgba(229,199,139,0.40) !important}
+html:root .hover\:bg-red-950\/40:hover{background-color:rgba(229,199,139,0.16) !important}
+html:root .hover\:border-red-500\/30:hover{border-color:rgba(229,199,139,0.40) !important}

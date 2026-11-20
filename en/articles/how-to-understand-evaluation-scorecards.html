@@ -1,0 +1,1205 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to Understand Technical Evaluation Scorecards &amp; Engineer Maximum Points | Youssef Ghamry</title>
+    <meta name="description" content="Tactical proposal design manual for decoding RFP Evaluation Scorecards: rubric grading bands, partial credit risks, criterion mapping tables, and internal score simulation prior to upload." />
+    <link rel="canonical" href="/en/articles/how-to-understand-evaluation-scorecards.html" />
+    <link rel="alternate" hreflang="en" href="/en/articles/how-to-understand-evaluation-scorecards.html" />
+    <link rel="alternate" hreflang="ar" href="/ar/articles/how-to-understand-evaluation-scorecards.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Youssef Ghamry" />
+    <meta property="og:url" content="/en/articles/how-to-understand-evaluation-scorecards.html" />
+    <meta property="og:title" content="How to Understand Technical Evaluation Scorecards &amp; Engineer Maximum Points" />
+    <meta property="og:description" content="Tactical proposal design manual for decoding RFP Evaluation Scorecards: rubric grading bands, partial credit risks, criterion mapping tables, and internal score simulation prior to upload." />
+    <meta property="og:image" content="/assets/aistudio/image_ef5d64bf.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Understand Technical Evaluation Scorecards &amp; Engineer Maximum Points" />
+    <meta name="twitter:description" content="Tactical proposal design manual for decoding RFP Evaluation Scorecards: rubric grading bands, partial credit risks, criterion mapping tables, and internal score simulation prior to upload." />
+    <meta name="twitter:image" content="/assets/aistudio/image_ef5d64bf.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Knowledge Hub",
+          "item": "/en/articles/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "How to Understand Technical Evaluation Scorecards & Engineer Maximum Points",
+          "item": "/en/articles/how-to-understand-evaluation-scorecards.html"
+        }
+      ]
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "How to Understand Technical Evaluation Scorecards & Engineer Maximum Points",
+      "description": "Tactical proposal design manual for decoding RFP Evaluation Scorecards: rubric grading bands, partial credit risks, criterion mapping tables, and internal score simulation prior to upload.",
+      "wordCount": 1013,
+      "articleSection": "Technical Evaluation & Scoring",
+      "datePublished": "2026-11-04",
+      "dateModified": "2026-11-13",
+      "inLanguage": "en",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/en/articles/how-to-understand-evaluation-scorecards.html"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Youssef Ghamry",
+        "jobTitle": "Tender & Proposal Specialist | Bid QA"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why do evaluation scorecards divide total marks into qualitative bands like 50% or 75%?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standardized qualitative maturity bands reduce subjective bias among different committee engineers and create auditable legal justification showing why one bidder earned 18/20 while another earned 10/20."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should a bidder do if the RFP mentions technical evaluation without publishing sub-criterion point weights?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Submit a formal clarification query requesting weighting clarity before the Q&A cutoff; if unreleased, use our balanced baseline allocation while dedicating clear subsections and evidence to every single topic named in the evaluation summary."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can composite scorecard criteria be handled cleanly inside a proposal?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Deconstruct each multi-part criterion into explicit numbered subheadings (e.g., 4.5.1 Testing Approach, 4.5.2 Data Migration Protocol, 4.5.3 Training & Knowledge Transfer) so zero sub-elements get glossed over."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is proposing \"TBD\" (To Be Determined) for a scored key role ever acceptable?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No—almost every weighted scorecard awards 0 points for unnamed \"TBD\" placeholders on evaluated Key Personnel roles and may even trigger mandatory disqualification if named CVs are required at submission."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How closely do Red Team scorecard simulations predict actual committee outcomes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "When executed strictly without author bias against the published rubric, realistic Red Team scoring routinely forecasts final committee outcomes within a ±4 to 6 point margin—giving teams critical time to close gaps."
+          }
+        }
+      ]
+    }
+  ]
+}
+    </script>
+  </head>
+  <body class="theme-gold selection:bg-emerald-600 selection:text-white bg-[#050806] text-slate-100 min-h-screen">
+    <div id="article-reading-progress" aria-hidden="true"></div>
+    
+    <header class="sticky top-0 z-50 glass-panel border-b border-emerald-950/60 bg-[#050806]/95 backdrop-blur-xl">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between relative">
+        
+        <!-- Brand Logo / Emblem -->
+        <a href="/index.html" class="flex items-center gap-3 text-white no-underline group flex-shrink-0">
+          <div class="relative w-10 h-10 rounded-full border border-[#C6A15B]/50 p-0.5 bg-[#07130D] group-hover:border-[#E5C78B] transition-colors">
+            <img src="/assets/aistudio/image_ef5d64bf.png" alt="Youssef Ghamry Emblem" class="w-full h-full object-cover rounded-full" />
+          </div>
+          <div>
+            <div class="text-sm sm:text-base tracking-wide font-extrabold gold-gradient-text uppercase">
+              Youssef Ghamry
+            </div>
+            <div class="text-xs text-emerald-300/75 tracking-tight">
+              Tender & Proposal Specialist | Bid QA
+            </div>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation: ALL 8 CORE PILLARS IN EXACT PARITY -->
+        <nav class="hidden lg:flex items-center gap-2 xl:gap-3 text-xs font-medium" aria-label="Main Navigation">
+          <!-- 1. Home -->
+          <a href="/index.html" class="nav-link px-2 py-1 rounded-md">Home</a>
+          <a href="/en/tenders/awarded-tenders.html" class="nav-link flex items-center gap-1.5 px-2 py-1 rounded-md">
+            <svg class="w-3.5 h-3.5 text-[#E5C78B] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            <span class="font-bold text-white hover:text-[#E5C78B] transition-colors">Tenders</span>
+          </a>
+
+          <!-- 2. Services (with Mega Menu Dropdown) -->
+          <div class="mega-menu-wrapper static">
+            <a href="/en/services/index.html" class="nav-link flex items-center gap-1 mega-menu-trigger group cursor-pointer px-2 py-1 rounded-md" aria-haspopup="true">
+              <span>Services</span>
+              <svg class="w-3.5 h-3.5 text-emerald-400 group-hover:text-[#E5C78B] transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </a>
+
+            <!-- Mega Menu Dropdown Panel -->
+            <div class="mega-menu-dropdown p-6 space-y-4 text-start">
+              <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-emerald-950/80">
+                <div class="flex items-center gap-2.5">
+                  <span class="w-2.5 h-2.5 rounded-full bg-[#C6A15B] animate-pulse"></span>
+                  <span class="text-xs font-bold uppercase tracking-wider text-white">
+                    Comprehensive Professional Services Directory (90+ Services)
+                  </span>
+                </div>
+                <a href="/en/services/index.html" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#C6A15B]/50 hover:border-[#E5C78B] bg-[#C6A15B]/15 text-xs font-bold text-[#E5C78B] hover:text-white transition-all shadow-sm">
+                  <span>Explore All Services (94 Services) →</span>
+                </a>
+              </div>
+
+              <!-- 6 Category Grid -->
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 text-xs">
+                
+      <div class="space-y-2 p-3 rounded-xl bg-[#07130D]/70 border border-emerald-950/80 hover:border-emerald-500/30 transition-colors">
+        <div class="flex items-center gap-2 pb-1.5 border-b border-emerald-950/80">
+          <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"/></svg>
+          <span class="text-xs font-bold text-white tracking-wide truncate">Website Design &amp; Development</span>
+        </div>
+        <div class="space-y-1">
+          
+          <a href="/en/services/wordpress-development.html" class="mega-menu-link">
+            <span class="bullet w-1.5 h-1.5 rounded-full bg-emerald-500/60 transition-all"></span>
+            <span class="truncate">WordPress Website Development</span>
+          </a>
+        
+          <a href="/en/services/shopify-development.html" class="mega-menu-link">
+            <span class="bullet w-1.5 h-1.5 rounded-full bg-emerald-500/60 transition-all"></span>
+            <span class="truncate">Shopify Website Development</span>
+          </a>
+        
+          <a href="/en/services/drupal-development.html" class="mega-menu-link">
+            <span class="bullet w-1.5 h-1.5 rounded-full bg-emerald-500/60 transition-all"></span>
+            <span class="truncate">Drupal Website Development</span>
+          </a>
+        
+          <a href="/en/services/magento-development.html" class="mega-menu-link">
+            <span class="bullet w-1.5 h-1.5 rounded-full bg-emerald-500/60 transition-all"></span>
+            <span class="truncate">Magento / Adobe Commerce Development</span>
+          </a>
+        
+          <a href="/en/services/opencart-development.html" class="mega-menu-link">
+            <span class="bullet w-1.5 h-1.5 rounded-full bg-emerald-500/60 transition-all"></span>
+            <span class="truncate">OpenCart Store Development</span>
+          </a>
+        
+        </div>
+      </div>
+    
+      <div class="space-y-2 p-3 rounded-xl bg-[#07130D]/70 border border-emerald-950/80 hover:border-emerald-500/30 transition-colors">
+        <div class="flex items-center gap-2 pb-1.5 border-b border-emerald-950/80">
+          <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span class="text-xs font-bold text-white tracking-wide truncate">Software &amp; Business Systems</span>
+        </div>
+        <div class="space-y-1">
+          
+          <a href="/en/services/erp-system-development.html" class="mega-menu-link">
+            <span class="bullet w-1.5 h-1.5 rounded-full bg-emerald-500/60 transition-all"></span>
+            <span class="truncate">ERP System Development &amp; Implementation</span>
+          </a>
+        
+          <a href="/en/services/crm-development.html" class="mega-menu-link">
+            <span class="bullet w-1.5 h-1.5 rounded-full bg-emerald-500/60 transition-all"></span>
+            <span class="truncate">CRM Development &amp; Sales Pipeline Engineering</span>
+          </a>
+        
+          <a href="/en/services/pos-development.html" class="mega-menu-link">
+            <span class="bullet w-1.5 h-1.5 rounded-full bg-emerald-500/60 transition-all"></span>
+            <span class="truncate">Point of Sale (POS) Systems Development</span>
+          </a>
+        
+          <a href="/en/services/hr-systems-development.html" class="mega-menu-link">
+            <span class="bullet w-1.5 h-1.5 rounded-full bg-emerald-500/60 transition-all"></span>
+            <span class="truncate">HR Management &amp; Payroll Systems Development</span>
+          </a>
+        
+          <a href="/en/services/inventory-systems-development.html" class="mega-menu-link">
+            <span class="bullet w-1.5 h-1.5 rounded-full bg-emerald-500/60 transition-all"></span>
+            <span class="truncate">Inventory &amp; Warehouse Management Systems (WMS)</span>
+          </a>
+        
+        </div>
+      </div>
+    
+      <div class="space-y-2 p-3 rounded-xl bg-[#07130D]/70 border border-emerald-950/80 hover:border-emerald-500/30 transition-colors">
+        <div class="flex items-center gap-2 pb-1.5 border-b border-emerald-950/80">
+          <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+          <span class="text-xs font-bold text-white tracking-wide truncate">Mobile Application Development</span>
+        </div>
+        <div class="space-y-1">
+          
+          <a href="/en/services/android-app-development.html" class="mega-menu-link">
+            <span class="bullet w-1.5 h-1.5 rounded-full bg-emerald-500/60 transition-all"></span>
+            <span class="truncate">Native Android Application Development</span>
+          </a>
+        
+          <a href="/en/services/ios-app-development.html" class="mega-menu-link">
+            <span class="bullet w-1.5 h-1.5 rounded-full bg-emerald-500/60 transition-all"></span>
+            <span class="truncate">Native iOS Application Development</span>
+          </a>
+        
+          <a href="/en/services/cross-platform-app-development.html" class="mega-menu-link">
+            <span class="bullet w-1.5 h-1.5 rounded-full bg-emerald-500/60 transition-all"></span>
+            <span class="truncate">Cross-Platform Mobile App Development (Flutter &amp; React Native)</span>
+          </a>
+        
+          <a href="/en/services/business-mobile-applications.html" class="mega-menu-link">
+            <span class="bullet w-1.5 h-1.5 rounded-full bg-emerald-500/60 transition-all"></span>
+            <span class="truncate">Business &amp; Enterprise Mobile Applications</span>
+          </a>
+        
+          <a href="/en/services/ecommerce-mobile-applications.html" class="mega-menu-link">
+            <span class="bullet w-1.5 h-1.5 rounded-full bg-emerald-500/60 transition-all"></span>
+            <span class="truncate">E-Commerce Mobile Application Development</span>
+          </a>
+        
+        </div>
+      </div>
+    
+      <div class="space-y-2 p-3 rounded-xl bg-[#07130D]/70 border border-emerald-950/80 hover:border-emerald-500/30 transition-colors">
+        <div class="flex items-center gap-2 pb-1.5 border-b border-emerald-950/80">
+          <svg class="w-4 h-4 text-[#E5C78B] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+          <span class="text-xs font-bold text-white tracking-wide truncate">Digital Marketing &amp; SEO</span>
+        </div>
+        <div class="space-y-1">
+          
+          <a href="/en/services/on-page-seo.html" class="mega-menu-link">
+            <span class="bullet w-1.5 h-1.5 rounded-full bg-emerald-500/60 transition-all"></span>
+            <span class="truncate">On-Page SEO Optimization</span>
+          </a>
+        
+          <a href="/en/services/off-page-seo.html" class="mega-menu-link">
+            <span class="bullet w-1.5 h-1.5 rounded-full bg-emerald-500/60 transition-all"></span>
+            <span class="truncate">Off-Page SEO &amp; Authority Building</span>
+          </a>
+        
+          <a href="/en/services/seo-audits.html" class="mega-menu-link">
+            <span class="bullet w-1.5 h-1.5 rounded-full bg-emerald-500/60 transition-all"></span>
+            <span class="truncate">Comprehensive SEO Audits &amp; Health Inspections</span>
+          </a>
+        
+          <a href="/en/services/keyword-research.html" class="mega-menu-link">
+            <span class="bullet w-1.5 h-1.5 rounded-full bg-emerald-500/60 transition-all"></span>
+            <span class="truncate">Keyword Research &amp; Search Intent Mapping</span>
+          </a>
+        
+          <a href="/en/services/seo-content-strategy.html" class="mega-menu-link">
+            <span class="bullet w-1.5 h-1.5 rounded-full bg-emerald-500/60 transition-all"></span>
+            <span class="truncate">SEO Content Strategy &amp; Topic Clustering</span>
+          </a>
+        
+        </div>
+      </div>
+    
+      <div class="space-y-2 p-3 rounded-xl bg-[#07130D]/70 border border-emerald-950/80 hover:border-emerald-500/30 transition-colors">
+        <div class="flex items-center gap-2 pb-1.5 border-b border-emerald-950/80">
+          <svg class="w-4 h-4 text-[#E5C78B] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <span class="text-xs font-bold text-white tracking-wide truncate">Business Development &amp; Consulting</span>
+        </div>
+        <div class="space-y-1">
+          
+          <a href="/en/services/business-development-consulting.html" class="mega-menu-link">
+            <span class="bullet w-1.5 h-1.5 rounded-full bg-emerald-500/60 transition-all"></span>
+            <span class="truncate">Business Development Consulting &amp; Market Expansion</span>
+          </a>
+        
+          <a href="/en/services/it-pre-sales-support.html" class="mega-menu-link">
+            <span class="bullet w-1.5 h-1.5 rounded-full bg-emerald-500/60 transition-all"></span>
+            <span class="truncate">IT Pre-Sales Consulting &amp; Solution Engineering</span>
+          </a>
+        
+          <a href="/en/services/solution-consulting.html" class="mega-menu-link">
+            <span class="bullet w-1.5 h-1.5 rounded-full bg-emerald-500/60 transition-all"></span>
+            <span class="truncate">Enterprise Solution Consulting &amp; Digital Architecture</span>
+          </a>
+        
+          <a href="/en/services/opportunity-assessment.html" class="mega-menu-link">
+            <span class="bullet w-1.5 h-1.5 rounded-full bg-emerald-500/60 transition-all"></span>
+            <span class="truncate">Commercial Opportunity Assessment &amp; Feasibility Studies</span>
+          </a>
+        
+          <a href="/en/services/bid-no-bid-support.html" class="mega-menu-link">
+            <span class="bullet w-1.5 h-1.5 rounded-full bg-emerald-500/60 transition-all"></span>
+            <span class="truncate">Strategic Bid / No-Bid Governance Support</span>
+          </a>
+        
+        </div>
+      </div>
+    
+              </div>
+
+              <!-- Mega Menu Footer -->
+              <div class="pt-3 border-t border-emerald-950/80 flex items-center justify-between text-xs text-emerald-400/85">
+                <span class="flex items-center gap-1.5">
+                  <svg class="w-4 h-4 text-[#E5C78B] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <span>Full compliance with Saudi Etimad procurement frameworks & enterprise standards</span>
+                </span>
+                <a href="/index.html#contact" class="text-[#E5C78B] hover:text-white font-semibold transition-colors">
+                  Get Bid Consultation →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Awarded Tenders & Bid Experience -->
+
+          <!-- 4. Portfolio & Projects -->
+          <a href="/index.html#portfolio" class="nav-link px-2 py-1 rounded-md">Portfolio</a>
+
+          <!-- 5. Certifications -->
+          <a href="/en/certifications/index.html" class="nav-link px-2 py-1 rounded-md">Certifications</a>
+
+          <!-- 6. Articles & Knowledge Hub -->
+          <a href="/en/articles/index.html" class="nav-link px-2 py-1 rounded-md">Knowledge Hub</a>
+
+          <!-- 7. CV -->
+          <a href="/index.html#resume" class="nav-link px-2 py-1 rounded-md">CV / Resume</a>
+
+          <!-- 8. Contact -->
+          <a href="/index.html#contact" class="nav-link px-2 py-1 rounded-md">Contact</a>
+        </nav>
+
+        <!-- Right Side: Language Switcher & Request CTA -->
+        <div class="flex items-center gap-2.5 sm:gap-3 flex-shrink-0">
+          <!-- Language Switcher -->
+          <a 
+            href="/ar/articles/how-to-understand-evaluation-scorecards.html" 
+            class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg border border-[#C6A15B]/40 hover:border-[#E5C78B] bg-[#07130D] text-[11px] sm:text-xs font-semibold text-[#E5C78B] hover:text-white transition-all shadow-sm" 
+            title="التبديل إلى النسخة العربية لهذه الصفحة"
+          >
+            <svg class="w-3.5 h-3.5 text-[#E5C78B] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span class="hidden xs:inline">العربية (AR)</span>
+            <span class="xs:hidden">عربي</span>
+          </a>
+
+          <a href="/index.html#contact" class="hidden sm:inline-flex btn-gold text-xs py-2 px-3 sm:px-4 shadow-sm font-bold">
+            <span>Request Proposal</span>
+          </a>
+
+          <!-- Mobile Nav Toggle -->
+          <button id="mobile-nav-toggle" class="lg:hidden p-2 text-emerald-300 hover:text-white rounded-lg focus:outline-none" aria-label="Toggle Mobile Menu" aria-expanded="false">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div id="mobile-nav-drawer" class="hidden lg:hidden glass-panel border-t border-emerald-950/80 px-6 py-6 space-y-4 max-h-[85vh] overflow-y-auto">
+        <!-- 1. Home -->
+        <a href="/index.html" class="block text-sm text-emerald-200 hover:text-[#E5C78B] py-1.5 font-medium">Home</a>
+
+        <!-- 2. Services Accordion -->
+        <div class="border-y border-emerald-950/60 py-2">
+          <button class="mobile-accordion-btn w-full flex items-center justify-between text-sm text-emerald-200 hover:text-[#E5C78B] py-1.5 font-bold" data-target="mobile-services-accordion" aria-expanded="false">
+            <span>Services Directory (90+ Services)</span>
+            <svg class="accordion-chevron w-4 h-4 transition-transform duration-200 text-[#E5C78B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          
+          <div id="mobile-services-accordion" class="mobile-accordion-content space-y-3 ps-2 my-2 border-s-2 border-emerald-900/60">
+            
+      <div class="space-y-1.5">
+        <div class="text-xs font-bold text-[#E5C78B] flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"/></svg>
+          <span>Website Design &amp; Development</span>
+        </div>
+        <div class="space-y-1 ms-4">
+          
+          <a href="/en/services/wordpress-development.html" class="block text-xs text-emerald-300/80 hover:text-[#E5C78B] py-1 ps-2 border-s border-emerald-900/60">
+            WordPress Website Development
+          </a>
+        
+          <a href="/en/services/shopify-development.html" class="block text-xs text-emerald-300/80 hover:text-[#E5C78B] py-1 ps-2 border-s border-emerald-900/60">
+            Shopify Website Development
+          </a>
+        
+          <a href="/en/services/drupal-development.html" class="block text-xs text-emerald-300/80 hover:text-[#E5C78B] py-1 ps-2 border-s border-emerald-900/60">
+            Drupal Website Development
+          </a>
+        
+          <a href="/en/services/magento-development.html" class="block text-xs text-emerald-300/80 hover:text-[#E5C78B] py-1 ps-2 border-s border-emerald-900/60">
+            Magento / Adobe Commerce Development
+          </a>
+        
+        </div>
+      </div>
+    
+      <div class="space-y-1.5">
+        <div class="text-xs font-bold text-[#E5C78B] flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <span>Software &amp; Business Systems</span>
+        </div>
+        <div class="space-y-1 ms-4">
+          
+          <a href="/en/services/erp-system-development.html" class="block text-xs text-emerald-300/80 hover:text-[#E5C78B] py-1 ps-2 border-s border-emerald-900/60">
+            ERP System Development &amp; Implementation
+          </a>
+        
+          <a href="/en/services/crm-development.html" class="block text-xs text-emerald-300/80 hover:text-[#E5C78B] py-1 ps-2 border-s border-emerald-900/60">
+            CRM Development &amp; Sales Pipeline Engineering
+          </a>
+        
+          <a href="/en/services/pos-development.html" class="block text-xs text-emerald-300/80 hover:text-[#E5C78B] py-1 ps-2 border-s border-emerald-900/60">
+            Point of Sale (POS) Systems Development
+          </a>
+        
+          <a href="/en/services/hr-systems-development.html" class="block text-xs text-emerald-300/80 hover:text-[#E5C78B] py-1 ps-2 border-s border-emerald-900/60">
+            HR Management &amp; Payroll Systems Development
+          </a>
+        
+        </div>
+      </div>
+    
+      <div class="space-y-1.5">
+        <div class="text-xs font-bold text-[#E5C78B] flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+          <span>Mobile Application Development</span>
+        </div>
+        <div class="space-y-1 ms-4">
+          
+          <a href="/en/services/android-app-development.html" class="block text-xs text-emerald-300/80 hover:text-[#E5C78B] py-1 ps-2 border-s border-emerald-900/60">
+            Native Android Application Development
+          </a>
+        
+          <a href="/en/services/ios-app-development.html" class="block text-xs text-emerald-300/80 hover:text-[#E5C78B] py-1 ps-2 border-s border-emerald-900/60">
+            Native iOS Application Development
+          </a>
+        
+          <a href="/en/services/cross-platform-app-development.html" class="block text-xs text-emerald-300/80 hover:text-[#E5C78B] py-1 ps-2 border-s border-emerald-900/60">
+            Cross-Platform Mobile App Development (Flutter &amp; React Native)
+          </a>
+        
+          <a href="/en/services/business-mobile-applications.html" class="block text-xs text-emerald-300/80 hover:text-[#E5C78B] py-1 ps-2 border-s border-emerald-900/60">
+            Business &amp; Enterprise Mobile Applications
+          </a>
+        
+        </div>
+      </div>
+    
+      <div class="space-y-1.5">
+        <div class="text-xs font-bold text-[#E5C78B] flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-[#E5C78B] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <span>Tender &amp; Proposal Services</span>
+        </div>
+        <div class="space-y-1 ms-4">
+          
+          <a href="/en/services/tender-proposal-writing.html" class="block text-xs text-emerald-300/80 hover:text-[#E5C78B] py-1 ps-2 border-s border-emerald-900/60">
+            Tender &amp; Technical Proposal Writing
+          </a>
+        
+          <a href="/en/services/technical-proposal-preparation.html" class="block text-xs text-emerald-300/80 hover:text-[#E5C78B] py-1 ps-2 border-s border-emerald-900/60">
+            Technical Proposal Preparation &amp; Engineering
+          </a>
+        
+          <a href="/en/services/financial-proposal-preparation.html" class="block text-xs text-emerald-300/80 hover:text-[#E5C78B] py-1 ps-2 border-s border-emerald-900/60">
+            Financial Proposal &amp; BOQ Preparation
+          </a>
+        
+          <a href="/en/services/tender-document-analysis.html" class="block text-xs text-emerald-300/80 hover:text-[#E5C78B] py-1 ps-2 border-s border-emerald-900/60">
+            Tender Document &amp; RFP In-Depth Analysis
+          </a>
+        
+        </div>
+      </div>
+    
+      <div class="space-y-1.5">
+        <div class="text-xs font-bold text-[#E5C78B] flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-[#E5C78B] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+          <span>Digital Marketing &amp; SEO</span>
+        </div>
+        <div class="space-y-1 ms-4">
+          
+          <a href="/en/services/on-page-seo.html" class="block text-xs text-emerald-300/80 hover:text-[#E5C78B] py-1 ps-2 border-s border-emerald-900/60">
+            On-Page SEO Optimization
+          </a>
+        
+          <a href="/en/services/off-page-seo.html" class="block text-xs text-emerald-300/80 hover:text-[#E5C78B] py-1 ps-2 border-s border-emerald-900/60">
+            Off-Page SEO &amp; Authority Building
+          </a>
+        
+          <a href="/en/services/seo-audits.html" class="block text-xs text-emerald-300/80 hover:text-[#E5C78B] py-1 ps-2 border-s border-emerald-900/60">
+            Comprehensive SEO Audits &amp; Health Inspections
+          </a>
+        
+          <a href="/en/services/keyword-research.html" class="block text-xs text-emerald-300/80 hover:text-[#E5C78B] py-1 ps-2 border-s border-emerald-900/60">
+            Keyword Research &amp; Search Intent Mapping
+          </a>
+        
+        </div>
+      </div>
+    
+      <div class="space-y-1.5">
+        <div class="text-xs font-bold text-[#E5C78B] flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-[#E5C78B] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <span>Business Development &amp; Consulting</span>
+        </div>
+        <div class="space-y-1 ms-4">
+          
+          <a href="/en/services/business-development-consulting.html" class="block text-xs text-emerald-300/80 hover:text-[#E5C78B] py-1 ps-2 border-s border-emerald-900/60">
+            Business Development Consulting &amp; Market Expansion
+          </a>
+        
+          <a href="/en/services/it-pre-sales-support.html" class="block text-xs text-emerald-300/80 hover:text-[#E5C78B] py-1 ps-2 border-s border-emerald-900/60">
+            IT Pre-Sales Consulting &amp; Solution Engineering
+          </a>
+        
+          <a href="/en/services/solution-consulting.html" class="block text-xs text-emerald-300/80 hover:text-[#E5C78B] py-1 ps-2 border-s border-emerald-900/60">
+            Enterprise Solution Consulting &amp; Digital Architecture
+          </a>
+        
+          <a href="/en/services/opportunity-assessment.html" class="block text-xs text-emerald-300/80 hover:text-[#E5C78B] py-1 ps-2 border-s border-emerald-900/60">
+            Commercial Opportunity Assessment &amp; Feasibility Studies
+          </a>
+        
+        </div>
+      </div>
+    
+            <div class="pt-2">
+              <a href="/en/services/index.html" class="block text-xs font-bold text-[#E5C78B] hover:text-white py-1">
+                → Browse Complete Services Directory (90+)
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Awarded Tenders -->
+        <a href="/en/tenders/awarded-tenders.html" class="flex items-center gap-1.5 text-sm font-bold text-white hover:text-[#E5C78B] py-1.5">
+          <svg class="w-4 h-4 text-[#E5C78B] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          <span>Tenders</span>
+        </a>
+
+        <!-- 4. Portfolio & Projects -->
+        <a href="/index.html#portfolio" class="block text-sm text-emerald-200 hover:text-[#E5C78B] py-1.5 font-medium">Portfolio</a>
+
+        <!-- 5. Certifications -->
+        <a href="/en/certifications/index.html" class="block text-sm text-emerald-200 hover:text-[#E5C78B] py-1.5 font-medium">Certifications</a>
+
+        <!-- 6. Articles & Knowledge Hub -->
+        <a href="/en/articles/index.html" class="block text-sm text-emerald-200 hover:text-[#E5C78B] py-1.5 font-medium">Knowledge Hub</a>
+
+        <!-- 7. CV -->
+        <a href="/index.html#resume" class="block text-sm text-emerald-200 hover:text-[#E5C78B] py-1.5 font-medium">CV / Resume</a>
+
+        <!-- 8. Contact -->
+        <a href="/index.html#contact" class="block text-sm text-[#E5C78B] hover:text-white py-1.5 font-bold">Contact</a>
+
+        <!-- Mobile Language Switcher Link -->
+        <div class="pt-3 border-t border-emerald-950/80 flex items-center justify-between text-xs">
+          <span class="text-emerald-400">Language:</span>
+          <a href="/ar/articles/how-to-understand-evaluation-scorecards.html" class="text-[#E5C78B] font-bold">
+            العربية (RTL)
+          </a>
+        </div>
+      </div>
+    </header>
+  
+
+    <!-- Editorial Hero Header -->
+    <section class="border-b border-emerald-950/70 bg-gradient-to-b from-[#07130D]/90 via-[#050806] to-[#050806]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+        <nav class="flex flex-wrap items-center gap-2 text-xs text-emerald-300/70 mb-5" aria-label="Breadcrumb">
+          <a href="/index.html" class="hover:text-[#E5C78B]">Home</a>
+          <span>/</span>
+          <a href="/en/articles/index.html" class="hover:text-[#E5C78B]">Knowledge Hub</a>
+          <span>/</span>
+          <span class="text-white font-semibold truncate max-w-xs sm:max-w-md">How to Understand Technical Evaluation Scorecards &amp; Engineer Maximum Points</span>
+        </nav>
+
+        <div class="space-y-4 max-w-4xl">
+          <!-- Unboxed Editorial Metadata Row -->
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-slate-300 tabular-nums">
+            <span class="inline-flex items-center gap-1.5 text-[#E5C78B] font-bold">
+              <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              <span>Domain D · Evaluation Scorecard Mastery</span>
+            </span>
+            <span class="text-emerald-800" aria-hidden="true">·</span>
+            <span class="inline-flex items-center gap-1.5 text-emerald-300">
+              <svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>7 min read</span>
+            </span>
+            <span class="text-emerald-800" aria-hidden="true">·</span>
+            <span class="inline-flex items-center gap-1.5 text-slate-300">
+              <svg class="w-3.5 h-3.5 text-[#E5C78B] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+              <span>1,013 words</span>
+            </span>
+            <span class="text-emerald-800" aria-hidden="true">·</span>
+            <span class="inline-flex items-center gap-1.5 text-slate-400">
+              <svg class="w-3.5 h-3.5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+              <span>2026-11-13</span>
+            </span>
+          </div>
+
+          <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            How to Understand Technical Evaluation Scorecards &amp; Engineer Maximum Points
+          </h1>
+
+          <p class="text-sm sm:text-base text-slate-300 leading-relaxed max-w-3xl">
+            Tactical proposal design manual for decoding RFP Evaluation Scorecards: rubric grading bands, partial credit risks, criterion mapping tables, and internal score simulation prior to upload.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-4 border-t border-emerald-950/70">
+            <div class="flex items-center gap-3">
+              <img src="/assets/aistudio/image_ef5d64bf.png" alt="Youssef Ghamry" class="w-10 h-10 rounded-full border border-[#C6A15B]/50 p-0.5 bg-[#07130D]" />
+              <div>
+                <div class="text-xs font-bold text-white">By Youssef Ghamry</div>
+                <div class="text-xs text-emerald-300/80">Tender & Proposal Specialist · Bid QA (200+ Tenders)</div>
+              </div>
+            </div>
+            <a href="/ar/articles/how-to-understand-evaluation-scorecards.html" class="ml-auto inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-[#07130D] border border-[#C6A15B]/40 hover:border-[#E5C78B] text-xs font-bold text-[#E5C78B] hover:text-white transition-all">
+              <svg class="w-3.5 h-3.5 text-[#E5C78B] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>النسخة العربية</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Grid -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-14">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+        <!-- Sticky Left Sidebar: TOC & Direct Consult CTA -->
+        <aside class="hidden lg:block lg:col-span-3 sticky top-28 space-y-5">
+          <div class="p-4 rounded-2xl glass-panel border border-emerald-950/80 space-y-3">
+            <div class="text-xs font-bold text-[#E5C78B] flex items-center gap-2 pb-2 border-b border-emerald-950/70">
+              <svg class="w-4 h-4 text-[#E5C78B] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h10M4 18h7"/></svg>
+              <span>Article Index</span>
+            </div>
+            <nav class="space-y-1">
+              
+      <a href="#anatomy" class="article-toc-link block py-2 px-3 rounded-lg text-xs text-emerald-200/80 hover:text-[#E5C78B] hover:bg-[#07130D] border-s-2 border-transparent hover:border-[#E5C78B]">
+        1. Deconstructing a Technical Evaluation Scorecard
+      </a>
+    
+      <a href="#grading-bands" class="article-toc-link block py-2 px-3 rounded-lg text-xs text-emerald-200/80 hover:text-[#E5C78B] hover:bg-[#07130D] border-s-2 border-transparent hover:border-[#E5C78B]">
+        2. Understanding Qualitative Band Multipliers (0% / 50% / 75% / 100%)
+      </a>
+    
+      <a href="#worked-scorecard" class="article-toc-link block py-2 px-3 rounded-lg text-xs text-emerald-200/80 hover:text-[#E5C78B] hover:bg-[#07130D] border-s-2 border-transparent hover:border-[#E5C78B]">
+        3. Full Sample Technical Scorecard Diagnostic Table
+      </a>
+    
+      <a href="#silent-deductions" class="article-toc-link block py-2 px-3 rounded-lg text-xs text-emerald-200/80 hover:text-[#E5C78B] hover:bg-[#07130D] border-s-2 border-transparent hover:border-[#E5C78B]">
+        4. Eliminating &quot;50% Partial-Credit&quot; Prose Triggers
+      </a>
+    
+      <a href="#simulation" class="article-toc-link block py-2 px-3 rounded-lg text-xs text-emerald-200/80 hover:text-[#E5C78B] hover:bg-[#07130D] border-s-2 border-transparent hover:border-[#E5C78B]">
+        5. Running a Live Pre-Submission Scorecard Simulation
+      </a>
+    
+              <a href="#faqs" class="article-toc-link block py-2 px-3 rounded-lg text-xs text-emerald-200/80 hover:text-[#E5C78B] hover:bg-[#07130D] border-s-2 border-transparent hover:border-[#E5C78B]">
+                Frequently Asked Questions
+              </a>
+              <a href="#article-direct-inquiry" class="article-toc-link block py-2 px-3 rounded-lg text-xs text-emerald-200/80 hover:text-[#E5C78B] hover:bg-[#07130D] border-s-2 border-transparent hover:border-[#E5C78B]">
+                Direct WhatsApp Q&A
+              </a>
+            </nav>
+          </div>
+
+          <!-- Connected Dedicated Service Card -->
+          <div class="p-4 rounded-2xl bg-[#07130D]/90 border border-[#C6A15B]/40 space-y-3">
+            <div class="flex items-center gap-2 text-xs text-[#E5C78B] font-bold">
+              <svg class="w-5 h-5 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              <span>Connected Dedicated Service</span>
+            </div>
+            <h4 class="text-xs font-bold text-white leading-snug">Technical Scorecard Simulation &amp; Point Optimization</h4>
+            <a href="/en/services/technical-evaluation-criteria-analysis.html" class="w-full py-2.5 px-3 rounded-xl btn-gold text-xs font-bold flex items-center justify-center gap-2">
+              <span>Explore Service</span>
+              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+          </div>
+
+          <!-- Direct Consultation Card -->
+          <div class="p-4 rounded-2xl bg-emerald-950/30 border border-emerald-500/30 space-y-3">
+            <div class="text-xs font-bold text-white">Preparing a Live Bid?</div>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Request a technical consultation or Red Team review directly via WhatsApp.
+            </p>
+            <a href="/en/contact/index.html" class="w-full py-2.5 px-3 rounded-xl btn-emerald text-xs font-bold flex items-center justify-center gap-2">
+              <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.044c.101-.116.433-.506.549-.68.116-.174.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+              <span>Request Consultation</span>
+            </a>
+          </div>
+        </aside>
+
+        <!-- Center Column: Full Editorial Narrative (~1,000+ Words) -->
+        <article class="lg:col-span-9 space-y-8 article-prose">
+          <!-- Mobile Collapsible TOC -->
+          <details class="lg:hidden rounded-2xl glass-panel border border-emerald-500/25 p-4 group">
+            <summary class="flex items-center justify-between cursor-pointer text-xs font-bold text-[#E5C78B] list-none">
+              <span class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-[#E5C78B] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h10M4 18h7"/></svg>
+                <span>Jump to Article Sections</span>
+              </span>
+              <svg class="faq-chevron w-4 h-4 text-[#E5C78B] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <nav class="mt-3 pt-3 border-t border-emerald-950/70 space-y-1">
+              
+      <a href="#anatomy" class="article-toc-link block py-2 px-3 rounded-lg text-xs text-emerald-200/80 hover:text-[#E5C78B] hover:bg-[#07130D] border-s-2 border-transparent hover:border-[#E5C78B]">
+        1. Deconstructing a Technical Evaluation Scorecard
+      </a>
+    
+      <a href="#grading-bands" class="article-toc-link block py-2 px-3 rounded-lg text-xs text-emerald-200/80 hover:text-[#E5C78B] hover:bg-[#07130D] border-s-2 border-transparent hover:border-[#E5C78B]">
+        2. Understanding Qualitative Band Multipliers (0% / 50% / 75% / 100%)
+      </a>
+    
+      <a href="#worked-scorecard" class="article-toc-link block py-2 px-3 rounded-lg text-xs text-emerald-200/80 hover:text-[#E5C78B] hover:bg-[#07130D] border-s-2 border-transparent hover:border-[#E5C78B]">
+        3. Full Sample Technical Scorecard Diagnostic Table
+      </a>
+    
+      <a href="#silent-deductions" class="article-toc-link block py-2 px-3 rounded-lg text-xs text-emerald-200/80 hover:text-[#E5C78B] hover:bg-[#07130D] border-s-2 border-transparent hover:border-[#E5C78B]">
+        4. Eliminating &quot;50% Partial-Credit&quot; Prose Triggers
+      </a>
+    
+      <a href="#simulation" class="article-toc-link block py-2 px-3 rounded-lg text-xs text-emerald-200/80 hover:text-[#E5C78B] hover:bg-[#07130D] border-s-2 border-transparent hover:border-[#E5C78B]">
+        5. Running a Live Pre-Submission Scorecard Simulation
+      </a>
+    
+              <a href="#faqs" class="block py-1.5 px-2 text-xs text-emerald-200 hover:text-[#E5C78B]">FAQs</a>
+              <a href="#article-direct-inquiry" class="block py-1.5 px-2 text-xs text-emerald-200 hover:text-[#E5C78B]">Ask a Question</a>
+            </nav>
+          </details>
+
+          <div class="p-6 sm:p-9 rounded-3xl glass-panel border border-emerald-950/80 space-y-6" data-reveal>
+            
+        <h2 id="anatomy" class="text-xl sm:text-2xl font-bold text-white mb-4">1. Deconstructing a Technical Evaluation Scorecard</h2>
+        <p class="text-slate-300 leading-relaxed mb-4">
+          A <strong>Technical Evaluation Scorecard</strong> (or Technical Scoring Rubric) is the quantitative grading matrix committee engineers fill out inside procurement evaluation portals when assessing your Technical Envelope. Whereas a Compliance Matrix captures binary obligation fulfillment, the Scorecard transforms engineering quality, clarity, and evidence depth into exact numeric points out of 100.
+        </p>
+        <p class="text-slate-300 leading-relaxed mb-4">
+          Every scorecard breaks down into three hierarchical tiers: <strong>Major Criteria</strong> (e.g., Methodology 40%, Team 30%, Experience 30%), <strong>Sub-Criteria</strong> (e.g., 1.1 Architecture 15 pts, 1.2 Security Controls 10 pts, 1.3 Timeline &amp; Risk 15 pts), and <strong>Grading Anchors</strong> defining what earns zero, poor, average, good, or exceptional full marks. Proposal writers who build chapters blindly without keeping this scorecard open on a second monitor forfeit massive scoring margins unnecessarily.
+        </p>
+
+        <h2 id="grading-bands" class="text-xl sm:text-2xl font-bold text-white mt-8 mb-4">2. Understanding Qualitative Band Multipliers (0% / 50% / 75% / 100%)</h2>
+        <p class="text-slate-300 leading-relaxed mb-4">
+          Most public and semi-government evaluation boards do not assign arbitrary random integers like "11.3 out of 15." Instead, committees grade sub-criteria via standardized <strong>Qualitative Maturity Multipliers</strong> tied directly to evidentiary standards:
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+          <div class="p-4 rounded-xl bg-[#07130D] border border-emerald-500/20 space-y-1.5">
+            <h4 class="font-bold text-[#E5C78B] text-sm">Band 0%–25% · Non-Responsive / Deficient</h4>
+            <p class="text-xs text-slate-300">Sub-criterion ignored, completely copied from RFP text with zero execution plan, or missing mandatory supporting certificates/CVs.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-[#07130D] border border-emerald-500/20 space-y-1.5">
+            <h4 class="font-bold text-[#E5C78B] text-sm">Band 50% · Generic Compliance (Passable Floor)</h4>
+            <p class="text-xs text-slate-300">Standard textbook methodology or basic baseline compliance showing capability without client-specific adaptation, risk metrics, or clear proof.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-[#07130D] border border-emerald-500/20 space-y-1.5">
+            <h4 class="font-bold text-[#E5C78B] text-sm">Band 75%–80% · Solid Tailored Proposal</h4>
+            <p class="text-xs text-slate-300">Well-structured, specific to agency deliverables, backed by clear Gantt charts, named compliant staff, and clean workflow diagrams.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-[#07130D] border border-emerald-500/20 space-y-1.5">
+            <h4 class="font-bold text-[#E5C78B] text-sm">Band 95%–100% · Benchmark Excellence &amp; Innovation</h4>
+            <p class="text-xs text-slate-300">Exceeds baseline expectations with traceable KPI tables, proactive risk containment, verified case metrics, and zero-ambiguity documentary proof.</p>
+          </div>
+        </div>
+
+        <h2 id="worked-scorecard" class="text-xl sm:text-2xl font-bold text-white mt-8 mb-4">3. Full Sample Technical Scorecard Diagnostic Table</h2>
+        <p class="text-slate-300 leading-relaxed mb-4">
+          Study how a typical 100-point Digital Transformation tender scorecard distributes points—and why jumping from the 50% "Generic" band to the 90%+ "Benchmark" band requires specific proof artifacts:
+        </p>
+        <div class="overflow-x-auto my-6">
+          <table class="w-full text-start text-xs border border-emerald-950/80 rounded-xl overflow-hidden">
+            <thead class="bg-[#07130D] text-[#E5C78B] uppercase">
+              <tr>
+                <th class="p-3.5 border-b border-emerald-950">Scorecard Sub-Item</th>
+                <th class="p-3.5 border-b border-emerald-950">Max Pts</th>
+                <th class="p-3.5 border-b border-emerald-950">What Traps Bids in 50% Band</th>
+                <th class="p-3.5 border-b border-emerald-950">What Unlocks 90%–100% Full Pts</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-emerald-950/60 bg-[#050806]/60 text-slate-300">
+              <tr>
+                <td class="p-3.5 font-bold text-white">1.1 Understanding &amp; Gap Analysis</td>
+                <td class="p-3.5 font-bold text-[#E5C78B]">10</td>
+                <td class="p-3.5">Repeating RFP text word-for-word without insights.</td>
+                <td class="p-3.5">As-Is vs. To-Be diagnostic chart + stakeholder matrix + CSFs.</td>
+              </tr>
+              <tr>
+                <td class="p-3.5 font-bold text-white">1.2 Architecture &amp; Cybersecurity</td>
+                <td class="p-3.5 font-bold text-[#E5C78B]">20</td>
+                <td class="p-3.5">One blurry generic cloud diagram + "we follow ISO."</td>
+                <td class="p-3.5">Detailed API/IAM topology + mapped NCA ECC controls + RPO/RTO metrics.</td>
+              </tr>
+              <tr>
+                <td class="p-3.5 font-bold text-white">1.3 Work Plan, Testing &amp; Migration</td>
+                <td class="p-3.5 font-bold text-[#E5C78B]">15</td>
+                <td class="p-3.5">High-level monthly bar chart with zero UAT/cutover gates.</td>
+                <td class="p-3.5">3-level WBS + readable Gantt + two dry-run migration protocols + rollback plan.</td>
+              </tr>
+              <tr>
+                <td class="p-3.5 font-bold text-white">2.1 Key Personnel &amp; Org Chart</td>
+                <td class="p-3.5 font-bold text-emerald-300">25</td>
+                <td class="p-3.5">Unformatted CVs missing active certs or role match.</td>
+                <td class="p-3.5">Summary Parity Table + tailored 2-page CVs exceeding experience mins + PDF certs.</td>
+              </tr>
+              <tr>
+                <td class="p-3.5 font-bold text-white">3.1 Relevant Past Case Studies</td>
+                <td class="p-3.5 font-bold text-emerald-300">20</td>
+                <td class="p-3.5">Project tables without client completion certificates.</td>
+                <td class="p-3.5">4 matched govt projects paired with signed completion attestations &amp; KPIs.</td>
+              </tr>
+              <tr>
+                <td class="p-3.5 font-bold text-white">4.1 Governance, QA, Risk &amp; SLA</td>
+                <td class="p-3.5 font-bold text-slate-200">10</td>
+                <td class="p-3.5">Textbook risk bullet points; no P1–P4 escalation SLA.</td>
+                <td class="p-3.5">RACI table + tailored 10-row Risk Register + P1 15-min SLA table + ISO proof.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="silent-deductions" class="text-xl sm:text-2xl font-bold text-white mt-8 mb-4">4. Eliminating "50% Partial-Credit" Prose Triggers</h2>
+        <p class="text-slate-300 leading-relaxed mb-4">
+          Why do respectable bids settle around 65%–72%—dangerously hovering right near the elimination cutoff—when teams worked hard? Because partial-credit triggers hide across drafts: promising outcomes without defining measurement metrics, naming generic senior titles ("Senior Architect TBD") instead of real credentialed staff, or ignoring sub-weights buried inside composite criteria (e.g., scoring 100% on Implementation Methodology while forgetting Knowledge Transfer inside the exact same sub-row!).
+        </p>
+        <div class="content-callout text-xs sm:text-sm text-slate-200 leading-relaxed">
+          <strong class="text-[#E5C78B] block mb-1">Watch Composite Sub-Criteria Traps:</strong>
+          Scorecard rows frequently bundle two or three sub-topics together—such as <em>"Testing Methodology, Data Migration, &amp; Training Academy (15 Points)."</em> Addressing Testing thoroughly while writing two weak sentences on Training caps your score around 10/15 instantly. Split every composite criterion into distinct dedicated subsections in your proposal outline!
+        </div>
+
+        <h2 id="simulation" class="text-xl sm:text-2xl font-bold text-white mt-8 mb-4">5. Running a Live Pre-Submission Scorecard Simulation</h2>
+        <ul class="list-disc list-inside space-y-2 text-slate-300 text-sm mb-4">
+          <li><strong>Step 1 — Build an Excel Scorecard Tracker on Day 2:</strong> Mirror the buyer's exact weights and sub-criteria rows inside a shared internal tracking workbook.</li>
+          <li><strong>Step 2 — Assign Section Owners Against Points:</strong> Make every architect explicitly accountable for hitting the 90%+ Benchmark Evidence Checklist for their assigned point total.</li>
+          <li><strong>Step 3 — Enforce Harsh Red Team Grading at T-6 Days:</strong> Instruct independent Red Team graders to assign 0% or 50% wherever documentary proof is weak or missing—never give yourself "benefit of the doubt."</li>
+          <li><strong>Step 4 — Target High-ROI Recovery Points:</strong> If simulation lands at 74/100, focus final 48-hour remediation on the single biggest recoverable gap (e.g., attaching missing completion certificates worth 10 rapid points).</li>
+        </ul>
+        <h3 class="text-lg font-bold text-[#E5C78B] mt-6 mb-3">Turning Simulated Score Gaps Into Rapid 48-Hour Wins</h3>
+        <p class="text-slate-300 leading-relaxed mb-4">
+          When internal scorecard simulations reveal a stubborn 76% score despite solid underlying engineering, look immediately at three quick-win evidence upgrades that require zero product redesign: adding an executive <strong>Criterion-to-Page Guide Table</strong> inside Chapter 2, replacing bullet lists with explicit Input-Process-Deliverable workflows paired with acceptance thresholds, and auditing attached project cards to confirm every client completion letter displays contract dates, matching sector scope, and legible official stamps cleanly.
+        </p>
+        <p class="text-slate-300 leading-relaxed mb-4">
+          Closing those straightforward evidentiary gaps within two days frequently unlocks 10 to 15 clean technical scorecard points—safely separating your bid from borderline qualification hazards and maximizing Best-Value competitiveness.
+        </p>
+      
+
+            <!-- Interactive FAQs Section -->
+            <section id="faqs" class="pt-8 border-t border-emerald-950/80 space-y-5" data-reveal>
+              <div class="space-y-1">
+                <h2 class="text-xl sm:text-2xl font-bold text-white flex items-center gap-2.5">
+                  <svg class="w-5 h-5 text-[#E5C78B] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                  <span>Frequently Asked Questions & Practical Answers</span>
+                </h2>
+                <p class="text-xs text-slate-400">
+                  Select any question below to expand the detailed procurement engineering response.
+                </p>
+              </div>
+              <div class="space-y-3">
+                
+      <div class="faq-accordion-item rounded-2xl bg-[#07130D]/90 border border-emerald-500/20 overflow-hidden is-open">
+        <button
+          type="button"
+          class="faq-accordion-btn w-full flex items-center justify-between gap-4 p-4 sm:p-5 text-start cursor-pointer focus:outline-none hover:bg-emerald-950/30 transition-colors"
+          aria-expanded="true"
+        >
+          <span class="font-bold text-white text-sm sm:text-base flex items-start gap-2.5 leading-snug">
+            <span class="text-[#E5C78B] tabular-nums shrink-0">01.</span>
+            <span>Why do evaluation scorecards divide total marks into qualitative bands like 50% or 75%?</span>
+          </span>
+          <svg class="faq-chevron w-4 h-4 text-[#E5C78B] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-accordion-panel is-open">
+          <div class="faq-accordion-inner">
+            <div class="px-4 sm:px-5 pb-4 sm:pb-5 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-emerald-950/70">
+              Standardized qualitative maturity bands reduce subjective bias among different committee engineers and create auditable legal justification showing why one bidder earned 18/20 while another earned 10/20.
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="faq-accordion-item rounded-2xl bg-[#07130D]/90 border border-emerald-500/20 overflow-hidden ">
+        <button
+          type="button"
+          class="faq-accordion-btn w-full flex items-center justify-between gap-4 p-4 sm:p-5 text-start cursor-pointer focus:outline-none hover:bg-emerald-950/30 transition-colors"
+          aria-expanded="false"
+        >
+          <span class="font-bold text-white text-sm sm:text-base flex items-start gap-2.5 leading-snug">
+            <span class="text-[#E5C78B] tabular-nums shrink-0">02.</span>
+            <span>What should a bidder do if the RFP mentions technical evaluation without publishing sub-criterion point weights?</span>
+          </span>
+          <svg class="faq-chevron w-4 h-4 text-[#E5C78B] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-accordion-panel ">
+          <div class="faq-accordion-inner">
+            <div class="px-4 sm:px-5 pb-4 sm:pb-5 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-emerald-950/70">
+              Submit a formal clarification query requesting weighting clarity before the Q&amp;A cutoff; if unreleased, use our balanced baseline allocation while dedicating clear subsections and evidence to every single topic named in the evaluation summary.
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="faq-accordion-item rounded-2xl bg-[#07130D]/90 border border-emerald-500/20 overflow-hidden ">
+        <button
+          type="button"
+          class="faq-accordion-btn w-full flex items-center justify-between gap-4 p-4 sm:p-5 text-start cursor-pointer focus:outline-none hover:bg-emerald-950/30 transition-colors"
+          aria-expanded="false"
+        >
+          <span class="font-bold text-white text-sm sm:text-base flex items-start gap-2.5 leading-snug">
+            <span class="text-[#E5C78B] tabular-nums shrink-0">03.</span>
+            <span>How can composite scorecard criteria be handled cleanly inside a proposal?</span>
+          </span>
+          <svg class="faq-chevron w-4 h-4 text-[#E5C78B] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-accordion-panel ">
+          <div class="faq-accordion-inner">
+            <div class="px-4 sm:px-5 pb-4 sm:pb-5 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-emerald-950/70">
+              Deconstruct each multi-part criterion into explicit numbered subheadings (e.g., 4.5.1 Testing Approach, 4.5.2 Data Migration Protocol, 4.5.3 Training &amp; Knowledge Transfer) so zero sub-elements get glossed over.
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="faq-accordion-item rounded-2xl bg-[#07130D]/90 border border-emerald-500/20 overflow-hidden ">
+        <button
+          type="button"
+          class="faq-accordion-btn w-full flex items-center justify-between gap-4 p-4 sm:p-5 text-start cursor-pointer focus:outline-none hover:bg-emerald-950/30 transition-colors"
+          aria-expanded="false"
+        >
+          <span class="font-bold text-white text-sm sm:text-base flex items-start gap-2.5 leading-snug">
+            <span class="text-[#E5C78B] tabular-nums shrink-0">04.</span>
+            <span>Is proposing &quot;TBD&quot; (To Be Determined) for a scored key role ever acceptable?</span>
+          </span>
+          <svg class="faq-chevron w-4 h-4 text-[#E5C78B] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-accordion-panel ">
+          <div class="faq-accordion-inner">
+            <div class="px-4 sm:px-5 pb-4 sm:pb-5 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-emerald-950/70">
+              No—almost every weighted scorecard awards 0 points for unnamed &quot;TBD&quot; placeholders on evaluated Key Personnel roles and may even trigger mandatory disqualification if named CVs are required at submission.
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="faq-accordion-item rounded-2xl bg-[#07130D]/90 border border-emerald-500/20 overflow-hidden ">
+        <button
+          type="button"
+          class="faq-accordion-btn w-full flex items-center justify-between gap-4 p-4 sm:p-5 text-start cursor-pointer focus:outline-none hover:bg-emerald-950/30 transition-colors"
+          aria-expanded="false"
+        >
+          <span class="font-bold text-white text-sm sm:text-base flex items-start gap-2.5 leading-snug">
+            <span class="text-[#E5C78B] tabular-nums shrink-0">05.</span>
+            <span>How closely do Red Team scorecard simulations predict actual committee outcomes?</span>
+          </span>
+          <svg class="faq-chevron w-4 h-4 text-[#E5C78B] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="faq-accordion-panel ">
+          <div class="faq-accordion-inner">
+            <div class="px-4 sm:px-5 pb-4 sm:pb-5 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-emerald-950/70">
+              When executed strictly without author bias against the published rubric, realistic Red Team scoring routinely forecasts final committee outcomes within a ±4 to 6 point margin—giving teams critical time to close gaps.
+            </div>
+          </div>
+        </div>
+      </div>
+    
+              </div>
+            </section>
+          </div>
+
+          <!-- Embedded Quick Question & Consultation -> Direct WhatsApp -->
+          <section id="article-direct-inquiry" class="p-6 sm:p-8 rounded-3xl glass-panel border border-[#C6A15B]/45 bg-gradient-to-br from-[#07130D] via-[#050806] to-[#0B1F16] space-y-5" data-reveal>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-emerald-950/80">
+              <div class="space-y-1">
+                <h3 class="text-lg sm:text-xl font-bold text-white flex items-center gap-2.5">
+                  <svg class="w-5 h-5 text-[#E5C78B] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                  <span>Have a Specific Question on This Topic? Dispatch Direct to WhatsApp</span>
+                </h3>
+                <p class="text-xs text-slate-300">
+                  Submit your question or tender challenge and launch a cleanly formatted message directly to Youssef Ghamry on WhatsApp.
+                </p>
+              </div>
+            </div>
+
+            <div id="article-wa-error" class="hidden p-3 rounded-xl bg-red-950/60 border border-red-500/40 text-xs text-red-200"></div>
+            <div id="article-wa-success" class="hidden"></div>
+
+            <form id="article-whatsapp-inquiry-form" data-article-title="How to Understand Technical Evaluation Scorecards &amp; Engineer Maximum Points" class="space-y-4 text-xs">
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="space-y-1.5">
+                  <label class="block font-semibold text-slate-200">Your Name *</label>
+                  <input type="text" name="q_name" required placeholder="e.g. Eng. Khaled Al-Qahtani" class="luxury-input" />
+                </div>
+                <div class="space-y-1.5">
+                  <label class="block font-semibold text-slate-200">Organization / Entity</label>
+                  <input type="text" name="q_entity" placeholder="Company name" class="luxury-input" />
+                </div>
+                <div class="space-y-1.5">
+                  <label class="block font-semibold text-slate-200">Phone or Email</label>
+                  <input type="text" name="q_contact" placeholder="+966... or email" class="luxury-input" dir="ltr" />
+                </div>
+              </div>
+
+              <div class="space-y-1.5">
+                <label class="block font-semibold text-slate-200">Your Question or Tender Brief *</label>
+                <textarea name="q_question" rows="3" required placeholder="Write your question or tender details..." class="luxury-input leading-relaxed"></textarea>
+              </div>
+
+              <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-1">
+                <a href="/en/contact/index.html" class="text-xs text-emerald-300 hover:text-[#E5C78B] underline">
+                  Or open the full Bid Consultation Form →
+                </a>
+                <button type="submit" class="w-full sm:w-auto btn-gold text-xs py-2.5 px-6 font-bold flex items-center justify-center gap-2 cursor-pointer shadow-lg">
+                  <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.044c.101-.116.433-.506.549-.68.116-.174.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                  <span>Send Question via Direct WhatsApp</span>
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <!-- Related Guides Grid -->
+          <section class="space-y-4" data-reveal>
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <svg class="w-3.5 h-3.5 text-[#E5C78B] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+              <span>Related Guides from the Tender Knowledge Hub</span>
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              
+        <a href="/en/articles/understanding-technical-evaluation-criteria.html" class="interactive-card p-5 rounded-2xl bg-[#07130D]/90 border border-emerald-500/25 hover:border-[#C6A15B]/60 flex flex-col justify-between gap-3 group">
+          <div class="space-y-2">
+            <div class="text-xs font-semibold text-[#E5C78B] flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              <span>Domain D</span>
+            </div>
+            <h4 class="text-sm font-bold text-white group-hover:text-[#E5C78B] transition-colors leading-snug">
+              Understanding Technical Evaluation Criteria: How Scoring Committees Grade Proposals
+            </h4>
+            <p class="text-xs text-slate-400 leading-relaxed line-clamp-2">
+              Deconstructing technical evaluation formulas: technical weightings, methodology scoring, team qualifications points, and reference project weights.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-emerald-950/70 flex items-center justify-between text-xs font-bold text-emerald-400 group-hover:text-[#E5C78B]">
+            <span>Read Guide</span>
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </div>
+        </a>
+      
+        <a href="/en/articles/pass-fail-evaluation-vs-weighted-scoring.html" class="interactive-card p-5 rounded-2xl bg-[#07130D]/90 border border-emerald-500/25 hover:border-[#C6A15B]/60 flex flex-col justify-between gap-3 group">
+          <div class="space-y-2">
+            <div class="text-xs font-semibold text-[#E5C78B] flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              <span>Domain D</span>
+            </div>
+            <h4 class="text-sm font-bold text-white group-hover:text-[#E5C78B] transition-colors leading-snug">
+              Pass/Fail Evaluation vs. Weighted Scoring: Tactical Differences in Technical Bid Response
+            </h4>
+            <p class="text-xs text-slate-400 leading-relaxed line-clamp-2">
+              Strategic analysis of tender evaluation models: binary pass/fail hurdles vs. competitive point scoring, and how to allocate proposal effort.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-emerald-950/70 flex items-center justify-between text-xs font-bold text-emerald-400 group-hover:text-[#E5C78B]">
+            <span>Read Guide</span>
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </div>
+        </a>
+      
+        <a href="/en/articles/what-is-a-tender-and-rfp.html" class="interactive-card p-5 rounded-2xl bg-[#07130D]/90 border border-emerald-500/25 hover:border-[#C6A15B]/60 flex flex-col justify-between gap-3 group">
+          <div class="space-y-2">
+            <div class="text-xs font-semibold text-[#E5C78B] flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              <span>Domain A</span>
+            </div>
+            <h4 class="text-sm font-bold text-white group-hover:text-[#E5C78B] transition-colors leading-snug">
+              What Is a Tender? A Complete Guide to RFP, RFQ, and RFI Procurement Fundamentals
+            </h4>
+            <p class="text-xs text-slate-400 leading-relaxed line-clamp-2">
+              Foundational guide explaining public and private procurement, crucial distinctions between RFP, RFQ, and RFI, and tender document architecture.
+            </p>
+          </div>
+          <div class="pt-3 border-t border-emerald-950/70 flex items-center justify-between text-xs font-bold text-emerald-400 group-hover:text-[#E5C78B]">
+            <span>Read Guide</span>
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </div>
+        </a>
+      
+            </div>
+          </section>
+
+          <!-- Conversion Bottom Banner -->
+          <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#07130D] via-[#050806] to-[#07130D] border border-[#C6A15B]/40 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl" data-reveal>
+            <div class="space-y-2 text-center sm:text-start">
+              <h3 class="text-lg sm:text-xl font-bold text-white">
+                Preparing a High-Stakes Tender or Government RFP?
+              </h3>
+              <p class="text-xs sm:text-sm text-emerald-200/75 max-w-xl">
+                Leverage 200+ tenders experience, compliance matrices, and Red Team audits that ensure full technical compliance.
+              </p>
+            </div>
+            <a href="/en/contact/index.html" class="btn-gold text-xs sm:text-sm py-3 px-6 font-bold whitespace-nowrap shadow-lg flex items-center gap-2">
+              <span>Request Proposal Consultation</span>
+              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </main>
+
+    
+    <footer class="border-t border-emerald-950/80 bg-[#050806] py-12 text-xs text-emerald-300/60 relative z-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full border border-[#C6A15B]/50 p-0.5 bg-[#07130D]">
+              <img src="/assets/aistudio/image_ef5d64bf.png" alt="Emblem" class="w-full h-full object-cover rounded-full" />
+            </div>
+            <div>
+              <span class="font-extrabold text-white gold-gradient-text tracking-wide">
+                YOUSSEF GHAMRY
+              </span>
+              <span class="text-slate-500">
+                 — Tender Specialist & Web Engineer
+              </span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-6">
+            <a href="/index.html" class="hover:text-[#E5C78B] transition-colors">Home</a>
+            <a href="/en/services/index.html" class="hover:text-[#E5C78B] text-[#E5C78B] font-semibold transition-colors">Services Directory</a>
+            <a href="/en/tenders/index.html" class="hover:text-[#E5C78B] transition-colors">Knowledge Hub</a>
+            <a href="/en/certifications/index.html" class="hover:text-[#E5C78B] transition-colors">Certifications (27+)</a>
+            <a href="/index.html#portfolio" class="hover:text-[#E5C78B] transition-colors">Portfolio</a>
+            <a href="/index.html#resume" class="hover:text-[#E5C78B] transition-colors">CV</a>
+            <a href="/index.html#contact" class="hover:text-white transition-colors">Contact</a>
+          </div>
+        </div>
+
+        <div class="pt-6 border-t border-emerald-950/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+          <div>
+            © 2026 Youssef Ghamry. All rights reserved. Professional Tender Consulting & Technology Solutions.
+          </div>
+          <div>
+            Cairo, Egypt · KSA & GCC Regional Remote Engagements
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  
+    <script src="/assets/js/main.js" defer></script>
+  </body>
+</html>

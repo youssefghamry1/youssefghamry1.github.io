@@ -1,0 +1,6 @@
+[build]
+  command = "npm run build && rm -f dist/assets/aistudio/Paste_* dist/assets/aistudio/youssef_ghamry_bid_* dist/assets/aistudio/web_*.html"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
